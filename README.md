@@ -175,13 +175,9 @@ To contribute, please:
 For questions about the project, collaborations, or permissions:
 
 **Marlon Barrios Solano**  
-Website: https://marlonbarrios.github.io/  
-Portfolio: https://www.marlonbarrios.com  
-Email: [contact information]
+https://marlonbarrios.github.io/
+IG: https://www.instagram.com/marlonbarriossolano/
 
-
-**Pangea.IA**  
-Email:m
 
 ---
 
