@@ -1,5 +1,7 @@
 # 45 Decolonial Techno Utopias | Pluriverse Engine
 
+🚀 **[LIVE APP: https://pluriverse-engine.vercel.app/](https://pluriverse-engine.vercel.app/)**
+
 ## Project Description
 
 **45 Decolonial Techno Utopias | Pluriverse Engine** is a performative instrument for pluriversal sense-making—a practice of understanding reality through multiple, coexisting ways of knowing that honor diverse cosmologies, knowledge systems, and lived experiences rather than imposing a single, universal truth.
@@ -56,7 +58,12 @@ The application includes 45 unique techno-decolonial utopias, each representing 
 
 ## Installation and Usage
 
-### Prerequisites
+### Try the Live App
+🌐 **Experience it now:** [https://pluriverse-engine.vercel.app/](https://pluriverse-engine.vercel.app/)
+
+### Local Development Setup
+
+#### Prerequisites
 ```bash
 Node.js 18+
 npm or yarn
