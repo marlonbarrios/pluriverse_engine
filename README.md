@@ -114,7 +114,8 @@ FAL_KEY=your_fal_api_key
 
 ### 🎨 **Artistic Concept & Development**
 **Marlon Barrios Solano** - Artist, Researcher, Creative Technologist  
-- [Website](https://www.marlonbarrios.com)
+- [Personal Website](https://marlonbarrios.github.io/)
+- [Portfolio](https://www.marlonbarrios.com)
 - [Instagram](https://www.instagram.com/marlonbarriossolano)
 - [Twitter](https://twitter.com/marlonbarrios)
 
@@ -174,11 +175,13 @@ To contribute, please:
 For questions about the project, collaborations, or permissions:
 
 **Marlon Barrios Solano**  
-Email: [contact information]  
-Website: https://www.marlonbarrios.com
+Website: https://marlonbarrios.github.io/  
+Portfolio: https://www.marlonbarrios.com  
+Email: [contact information]
+
 
 **Pangea.IA**  
-Email: [organization contact]
+Email:m
 
 ---
 
