@@ -19,7 +19,7 @@ export default function Home() {
   const [audioSrc, setAudioSrc] = useState('/bauhaus.mp3');
   const [currentWorld, setCurrentWorld] = useState(-1);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [lang, setLang] = useState<'es' | 'en' | 'fr' | 'de' | 'pt'>('es');
+  const [lang, setLang] = useState<'es' | 'en' | 'fr' | 'de' | 'pt' | 'tr'>('es');
   const [lastUpdated, setLastUpdated] = useState('');
   const [isWebcamBW, setIsWebcamBW] = useState(false);
   type RealtimeModel = { label: string; key: string; room: string };
@@ -192,9 +192,9 @@ export default function Home() {
     }
     return null;
   };
-  const [customNames, setCustomNames] = useState<Record<'en' | 'es' | 'fr' | 'de' | 'pt', Record<number, string>>>({ en: {}, es: {}, fr: {}, de: {}, pt: {} });
-  const [customPrompts, setCustomPrompts] = useState<Record<'en' | 'es' | 'fr' | 'de' | 'pt', Record<number, string>>>({ en: {}, es: {}, fr: {}, de: {}, pt: {} });
-  const [customImagePrompts, setCustomImagePrompts] = useState<Record<'en' | 'es' | 'fr' | 'de' | 'pt', Record<number, string>>>({ en: {}, es: {}, fr: {}, de: {}, pt: {} });
+  const [customNames, setCustomNames] = useState<Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', Record<number, string>>>({ en: {}, es: {}, fr: {}, de: {}, pt: {}, tr: {} });
+  const [customPrompts, setCustomPrompts] = useState<Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', Record<number, string>>>({ en: {}, es: {}, fr: {}, de: {}, pt: {}, tr: {} });
+  const [customImagePrompts, setCustomImagePrompts] = useState<Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', Record<number, string>>>({ en: {}, es: {}, fr: {}, de: {}, pt: {}, tr: {} });
   const [isEditingActive, setIsEditingActive] = useState(false);
   const [editTitle, setEditTitle] = useState('');
   const [editPrompt, setEditPrompt] = useState('');
@@ -204,20 +204,20 @@ export default function Home() {
 
   // 10 Decolonial Multiverse and Technofuture Prompts (EN)
   const worldPromptsEN = [
-    // 0 - Afro-Futurist Liberation
-    'of Black or African diaspora origin, hyperrealistic ONE human body in bauhaus style, in flowing techno-garments with intricate golden geometric patterns, floating orbs of ancestral wisdom with ethereal glow, vibrant neon colors, simple dark background with subtle geometric shapes, dramatic cinematic lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
+    // 0 - Expanded Kené (Shipibo-Konibo)
+    'Shipibo-Konibo populations from Peruvian Amazonia, hyperrealistic ONE human body, wearing embroidered garments with kené patterns functioning as interactive screens, background of floating Amazonian city with walls vibrating in visionary geometries, natural and technological lighting fused, 8K photorealistic details, honoring pueblos originarios',
     
-    // 1 - Indigenous Cyber Resistance
-    'of Indigenous or originary peoples origin, hyperrealistic ONE human body, in advanced digital camouflage with traditional patterns merged with circuit boards, glowing tribal markings with bioluminescent effects, holographic spirit animals, clean forest background with minimal elements, cinematic lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
+    // 1 - Algorithmic Ifá (Yoruba)
+    'Yoruba populations from Nigeria and Benin, hyperrealistic ONE human body, wearing turbans with oral memory sensors storing proverbs, in futuristic Lagos with screens showing the 256 odù of Ifá, warm golden lighting, 8K photorealistic details, honoring pueblos originarios',
     
-    // 2 - Queer Liberation Matrix
-    'of diverse LGBTQ+ identity, hyperrealistic ONE human body, in revolutionary techno-fashion with rainbow holographic effects, same-sex couples embracing with emotional depth, gender-fluid expression, simple neon city background with clean lines, dramatic cyberpunk lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
+    // 2 - Holographic Joik (Sami)
+    'Sami populations from Scandinavia, hyperrealistic ONE human body, in polar suits of reflective fibers, singing joik while holograms of reindeer and Arctic landscapes appear, background of Tromsø with northern lights, Arctic natural lighting, 8K photorealistic details, honoring pueblos originarios',
     
-    // 3 - Muslim Steampunk Revolution
-    'of Muslim, Black or Middle Eastern origin, hyperrealistic ONE human body, in brass and copper armor with Islamic geometric patterns on steam-powered machines, hijabs with mechanical enhancements, simple brass background with subtle geometric patterns, warm dramatic lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
+    // 3 - Digital Tzolk\'in (Maya)
+    'Maya populations from Mesoamerica, hyperrealistic ONE human body, wearing huipiles with microchips that change colors according to sacred days, in Mérida with screens marking Maya cyclical time, ceremonial lighting, 8K photorealistic details, honoring pueblos originarios',
     
-    // 4 - Latinx Quantum Dreamscape
-    'of Latinx or mestizo origin, hyperrealistic ONE human body, floating in cosmic dimensions with Aztec and Mayan symbols in quantum states, vibrant tropical colors, holographic pyramids, simple cosmic background with minimal stars, ethereal lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
+    // 4 - Expanded Gnawa Chants (Morocco)
+    'Gnawa populations from Morocco, hyperrealistic ONE human body, with tunics vibrating to the rhythm of metallic krakebs, in Casablanca where hospitals begin days with gnawa lila, warm morning lighting, 8K photorealistic details, honoring pueblos originarios',
     
     // 5 - Asian Techno-Spiritual Awakening
     'of East or South Asian origin, hyperrealistic ONE human body, in meditation poses with traditional robes enhanced with LED technology, floating mandalas with intricate patterns, zen gardens with holographic elements, simple zen background with clean lines, serene dramatic lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
@@ -342,97 +342,97 @@ export default function Home() {
 
   // 40 Prompts (ES)
   const worldPromptsES = [
-    // 0 - Afro-Futurist Liberation
-    'de origen de la diáspora africana o negra, hiperrealista UN cuerpo humano en estilo bauhaus, con prendas tecno fluidas y patrones geométricos dorados, orbes flotantes de sabiduría ancestral con brillo etéreo, colores neón vibrantes, fondo oscuro simple con formas geométricas sutiles, iluminación cinematográfica dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 1 - Indigenous Cyber Resistance
-    'de origen indígena u originario, hiperrealista UN cuerpo humano, con camuflaje digital avanzado y patrones tradicionales fusionados con circuitos, marcas tribales bioluminiscentes, animales espíritu holográficos, fondo de bosque limpio y minimalista, iluminación cinematográfica, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 2 - Queer Liberation Matrix
-    'de identidad LGBTQ+ diversa, hiperrealista UN cuerpo humano, con moda tecno revolucionaria y efectos holográficos arcoíris, parejas del mismo sexo abrazándose con profundidad emocional, expresión de género fluida, fondo de ciudad neón simple con líneas limpias, iluminación cyberpunk dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 3 - Muslim Steampunk Revolution
-    'de origen musulmán, negro o de Medio Oriente, hiperrealista UN cuerpo humano, armadura de latón y cobre con patrones geométricos islámicos en máquinas de vapor, hiyabs con mejoras mecánicas, fondo de latón simple con patrones sutiles, iluminación cálida y dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 4 - Latinx Quantum Dreamscape
-    'de origen latinx o mestizo, hiperrealista UN cuerpo humano, flotando en dimensiones cósmicas con símbolos aztecas y mayas en estados cuánticos, colores tropicales vibrantes, pirámides holográficas, fondo cósmico simple con estrellas mínimas, iluminación etérea, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 5 - Asian Techno-Spiritual Awakening
-    'de origen del este o sur de Asia, hiperrealista UN cuerpo humano, en poses de meditación con túnicas tradicionales y tecnología LED, mandalas flotantes con patrones intrincados, jardines zen con elementos holográficos, fondo zen simple con líneas limpias, iluminación serena y dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 6 - Pacific Islander Ocean Tech
-    'de origen polinesio o melanesio, hiperrealista UN cuerpo humano, con trajes acuáticos ciber inspirados en coral y conchas, paisajes submarinos, efectos bioluminiscentes, fondo azul profundo simple con agua sutil, iluminação azul intensa, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 7 - Middle Eastern Digital Oasis
-    'de origen árabe o persa, hiperrealista UN cuerpo humano, con túnicas digitales fluidas, oasis desérticos con palmeras holográficas, arte geométrico islámico, fondo desértico simple con horizonte limpio, hora dorada, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 8 - South Asian Cyber Temple
-    'de origen indio o pakistaní, hiperrealista UN cuerpo humano, con atuendo tradicional futurista, flores de loto digitales con detalles intrincados, deidades holográficas, fondo de templo simple con arquitectura limpia, iluminación espiritual dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 9 - Global Mash-Up Revolution
-    'representando diversidad global de cualquier continente, hiperrealista UN cuerpo humano, con moda tecno revolucionaria, símbolos culturales del mundo fusionados con elementos futuristas, arcoíris de etnicidades, fondo de mapa del mundo simple con líneas limpias, iluminación revolucionaria dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 10 - Meme Bard Renaissance
-    'hiperrealista UN cuerpo humano como juglar renacentista con pergaminos de memes holográficos, laúd-emoji, subtítulos flotantes, fondo de pergamino simple con filigranas limpias, foco teatral, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 11 - Influencer Jungle Safari
-    'hiperrealista UN cuerpo humano con equipo explorador neón, halo de aro de luz y drones-c luciérnaga, botella de agua gigante, fondo tropical simple con siluetas limpias, iluminación dramática brillante, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 12 - Bureaucracy Labyrinth Boss Level
-    'hiperrealista UN cuerpo humano en laberinto de carpetas y sellos infinitos, armadura de escritorio con runas de notas adhesivas, fondo de oficina simple con líneas de fuga nítidas, luz fría fluorescente, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 13 - Retro VHS Aerobics Utopia
-    'hiperrealista UN cuerpo humano en licra de los 80 brillante con cinta pixelada, líneas VHS, degradados cromo, fondo de rejilla simple con amanecer, strobes de estudio, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 14 - Pizza Mecha Delivery Rush
-    'hiperrealista UN cuerpo humano piloteando un mecha de reparto con hombreras de pizza, propulsores humeantes, líneas de velocidad, fondo de callejón simple con geometría limpia, luz cálida de farolas, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 15 - Coffee Overlords Bean Temple
-    'hiperrealista UN cuerpo humano con túnicas-ritual baristas y sigilos de latte art, relicarios de portafiltros flotantes, cometas de granos, fondo de café minimalista con texturas suaves, brillo ámbar, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 16 - Quantum Cat Herding League
-    'hiperrealista UN cuerpo humano con traje elegante y emisores de lana entrelazada, gatos translúcidos faseando, constelaciones de huellas, fondo de cielo estrellado simple con formas claras, luz de contorno lúdica, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 17 - Disco Archivist Datavault
-    'hiperrealista UN cuerpo humano en vestimenta brillante de bibliotecarie, códices-disco orbitando, borlas-cable, fondo de archivo simple con simetría audaz, foco saturado, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 18 - Crypto Moon Miner Karaoke
-    'hiperrealista UN cuerpo humano con overol espacial y micrófono LED, asteroides-moneda, barras de ecualizador, fondo de superficie lunar simple con horizonte limpio, luz neón fría, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 19 - Cloud Wizard Debug Arena
-    'hiperrealista UN cuerpo humano como mago-sisadmin con báculo-terminal brillante, sigilos de código en el aire, bichos flotantes, fondo de servidores en nube simple con íconos mínimos, luz helada, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 20 - Pluriversal Assembly Nexus
-    'de origen activista-académico del Sur Global, hiperrealista UN cuerpo humano, con atuendo ceremonial policultural de circuitos tejidos, orbes de traducción orbitando, anfiteatro simple con anillos concéntricos, iluminación cálida e inclusiva, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 21 - Border Thinking Commons
-    'de origen mestiza de fronteras, hiperrealista UN cuerpo humano, con capa híbrida textil-silicio, pancartas de poesía glitch, pasarela simple con horizonte limpio, luz dorada de contorno, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 22 - Transmodernity Agora
-    'de origen filósofo intercultural, hiperrealista UN cuerpo humano, con armadura modular reflectante grabada con escrituras pluriversales, pedestales de debate flotantes, plaza de mármol simple con columnas mínimas, luz de estudio nítida, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 23 - Socialized Power Mesh
-    'de origen organizador comunitario, hiperrealista UN cuerpo humano, con exotraje en red de nodos cooperativos, halos de intercambio, simple neighborhood background with clean grid, soft dawn lighting, 8K resolution, photorealistic details, honoring pueblos originarios',
-    // 24 - Heterarchy Signal Garden
-    'de origen cuidador multiespecie, hiperrealista UN cuerpo humano, con sobrecrecimiento de biocircuitos, flores-antena y enredaderas de datos, jardín en terrazas simple con senderos claros, luz difusa verde, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 25 - Critical Cosmopolitan Forge
-    'de origen artesano diaspórico, hiperrealistisch EIN menschlicher Körper, con bata-forja de laboratorio y ríos de código fundido, martillando tratados brillantes, taller simple de geometría limpia, brillo de brasas, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 26 - Epistemic South Observatory
-    'de origen afro-indígena investigador, hiperrealistisch EIN menschlicher Körper, con manto estelar y brazaletes sensor, constelaciones renombradas con nombres locales, cielo nocturno simple con horizonte mínimo, luz lunar fría, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 27 - Coloniality Debug Lab
-    'de origen analista decolonial, hiperrealistisch EIN menschlicher Körper, con bata de laboratorio y mapas trazados disolviéndose en patrones libres, sigilos de bug flotantes, laboratorio simple con bancos limpios, luz clave neutra, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 28 - Diversality Constellation
-    'de origen navegante políglota, hiperrealistisch EIN menschlicher Körper, con bufanda-prisma que difracta idiomas en luz, estrellas compañeras como voces, espacio profundo simple con marcadores escasos, luz iridiscente de contorno, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 29 - Geopolitics of Knowledge Atrium
-    'de origen bibliotecaria migrante, hiperrealistisch EIN menschlicher Körper, con mangas-archivo y venas de tinta-mapa, atlas de código abierto levitando, atrio simple con arcos limpios, luz cálida de biblioteca, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 30 - Body-Politics Resonator
-    'de origen transfeminista queer, hiperrealistisch EIN menschlicher Körper, con traje de resonancia que traduce latidos a señal pública, coro de siluetas, auditorio simple con líneas limpias, luz magenta-azul, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 31 - Decolonial Datavault
-    'de origen guardián de datos indígena, hiperrealistisch EIN menschlicher Körper, con poncho-tejido de llaves y bisutería criptográfica, glifos de consentimiento orbitando, bóveda simple con facetas mínimas, luz fría segura, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 32 - Subaltern Signal Studio
-    'de origen radiodifusor callejero, hiperrealistisch EIN menschlicher Körper, con equipo de radio portátil de malla y consolas con pegatinas, ondas comunitarias visibles, azotea simple con cielo limpio, luz ámbar de atardecer, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 33 - Zapatista Cloud Commune
-    'de origen campesinx autónomo, hiperrealistisch EIN menschlicher Körper, con máscara de malla bordada y arnés agro-solar, campos de milpa con código, montaña simple con horizonte limpio, neblina matinal, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 34 - Pachamama Synth Sanctuary
-    'de origen sanador andino, hiperrealistisch EIN menschlicher Körper, con circuitos de tonos tierra y trenzas de quipu-cable, interfaces de piedra que respiran, valle simple con terrazas limpias, luz dorada, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 35 - Diasporic Quantum Bridge
-    'de origen descendiente transoceánico, hiperrealistisch EIN menschlicher Körper, con traje de retícula de olas que abre portales de memoria, calzada simple con tramos limpios, luz aqua fría, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 36 - Nepantla Interface
-    'de origen entre-mundos, hiperrealistisch EIN menschlicher Körper, con atuendo de espectro dividido que mezcla textil analógico y digital, tarjetas de interfaz flotantes con poesía, corredor simple con líneas de fuga limpias, luz dual equilibrada, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 37 - Archive of Futures
-    'de origen guardián de memoria, hiperrealistisch EIN menschlicher Körper, con abrigo atador de tiempo y cajones de profecía giratorios, galería simple con pedestales mínimos, luz de museo suave, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 38 - Utopistics Workshop
-    'de origen diseñador cooperativo, hiperrealistisch EIN menschlicher Körper, con cinturón de herramientas modular imprimiendo políticas-objeto, mesa de asambleas de derechos, estudio simple con cuadrícula limpia, luz diurna neutra, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 39 - Liberation Protocol Plaza
-    'de origen mediador interreligioso, hiperrealistisch EIN menschlicher Körper, con manto-acuerdo que muestra cláusulas negociadas, palomas-dron, plaza cívica simple con banderas claras, luz esperanzadora del mediodía, detalles fotorrealistas 8K, honrando pueblos originarios',
+    // 0 - Universidad de los Glaciares (Quechua + Sami)
+    'hyperrealistic ONE human body from Quechua Andean and Sami Scandinavian peoples, distinctive indigenous Andean/Nordic facial features, long black braided hair with technological elements, wearing alpaca wool sweaters with bioluminescent circuits and traditional silver jewelry, bronze/fair skin tone, in intelligent ice campus with blue glaciers, indigenous women teaching glacial science, aurora reflections, polar blue-golden lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 1 - Ciudad-Río (Nasa + Wolof + Catalanes)
+    'hyperrealistic ONE human body from Nasa Colombian, Wolof Senegalese and Catalan peoples, distinctive Afro-indigenous-Mediterranean facial features, natural afro-curly hair with aquatic elements, wearing colorful Nasa textiles with African kente and Catalan fabrics, dark brown/black/olive skin tone, in transparent floating river city, architecture without walls, multicolored aquatic reflections, golden fluvial lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 2 - Plataforma Ñande (Guaraní + Igbo)
+    'hyperrealistic ONE human body from Guaraní Paraguayan and Igbo Nigerian peoples, distinctive indigenous-African facial features, straight black/afro hair with feathers and technological beads, wearing embroidered Guaraní ao po\'i with Igbo isiagu patterns, copper/dark brown skin tone, in digital village with organic solar servers, youth programming in ancestral languages, lush vegetation, natural green-golden lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 3 - Metápolis del Maíz (Zapotecos + Ashanti)
+    'hyperrealistic ONE human body from Zapotec Oaxacan and Ashanti Ghanaian peoples, distinctive Mesoamerican-West African facial features, black wavy hair with traditional gold ornaments, wearing Zapotec huipiles with golden Ashanti kente cloth, brown/dark skin with geometric tattoos, in vertical city of giant architectural corn cobs, women bioengineers with holographic seeds, golden corn towers, organic amber lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 4 - Archipiélago de la Memoria (Rarámuri + Bretones)
+    'hyperrealistic ONE human body from Rarámuri Mexican and Breton French peoples, distinctive indigenous-Celtic facial features, long brown/black hair with colorful traditional ribbons, wearing Rarámuri blankets with Celtic embroidery, bronze/fair skin with body paintings, in floating islands connected by light cables, mythologies projected in holograms, crystalline ocean, silver marine lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 5 - Cuerpo-Ciudad (Mapuche + Masái)
+    'hyperrealistic ONE human body from Mapuche Chilean and Masai Kenyan peoples, distinctive indigenous South American-East African facial features, long black hair with traditional feathers and technological elements, wearing Mapuche textiles with Masai shukas and beaded jewelry, bronze/dark brown skin tone, running shoes capturing kinetic energy, in giant anatomical cities where streets are energy veins, doctor-artists teaching urban medicine as performance, pulsating body lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 6 - Observatorio de Mariposas (Mixe + Tuareg)
+    'hyperrealistic ONE human body from Mixe Oaxacan and Tuareg Saharan peoples, distinctive indigenous Mexican-North African facial features, black hair with traditional wraps and technological elements, wearing Mixe huipiles with Tuareg tagelmust and desert fabrics, brown/olive skin tone, augmented reality glasses showing insect trajectories, in mobile laboratories following butterfly migration routes, scientists developing wing-algorithm meteorology, natural migratory lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 7 - Aurora Digital (Sami + Quechua + Yoruba)
+    'hyperrealistic ONE human body from Sami Scandinavian, Quechua Andean and Yoruba West African peoples, distinctive Arctic-Andean-African facial features, long black/brown hair with traditional ornaments and sensors, wearing reflective tunics with aurora-sound translation technology, bronze/dark/fair skin tone, in cities under controlled northern lights with bio-algorithms, night universities teaching in projected auroras, changing boreal lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 8 - Universidad Submarina (Shipibo + Igbo + Frisones)
+    'hyperrealistic ONE human body from Shipibo Amazonian, Igbo Nigerian and Frisian Dutch peoples, distinctive indigenous-African-European facial features, long black/blonde hair with aquatic technological elements, wearing amphibious suits embroidered with kené patterns and traditional textiles, bronze/dark/fair skin tone, in underwater campus with translucent domes and artificial corals, oceanic ethics research with community cosmology, blue submarine lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 9 - Pangea Algorítmica Oral (Wolof + Vascos)
+    'hyperrealistic ONE human body from Wolof Senegalese and Basque Spanish peoples, distinctive West African-Iberian facial features, curly black hair with traditional head wraps and technological elements, wearing Wolof boubous with Basque berets and voice-chip necklaces storing proverbs, dark brown/olive skin tone, in urban networks where proverbs govern algorithms, programmers reciting in plazas to update software, narrative urban lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 10 - Ciudad-Semilla (Maya + Celta)
+    'hyperrealistic ONE human body from Maya Yucatecan and Celtic Irish peoples, distinctive Mesoamerican-Celtic facial features, long black/auburn hair with jade and Celtic knot ornaments, wearing flowering Maya huipiles with Celtic tartan that blooms with sunlight, brown/fair skin with traditional tattoos, in buildings growing from seeds with inhabitants, universities designing vegetal architecture as curriculum, urban biology social systems, organic green lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 11 - Teatro de Cristal (Corsos + Yorubas)
+    'hyperrealistic ONE human body from Corsican Mediterranean and Yoruba West African peoples, distinctive Mediterranean-African facial features, curly black hair with coral ornaments and technological elements, wearing translucent digital masks with Corsican-Yoruba fusion garments, olive/dark brown skin tone, in living glass art halls changing with emotions, collective works where audience modifies stage, art as sensorial interaction, changing crystalline lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 12 - Red Lunar (Aymara + Sardos + Gnawa)
+    'hyperrealistic ONE human body from Aymara Bolivian, Sardinian Italian and Gnawa Moroccan peoples, distinctive Andean-Mediterranean-North African facial features, long black hair with traditional lunar ornaments and technological elements, wearing reflective helmets transmitting dreams with traditional textiles fusion, bronze/olive/brown skin tone, in floating colonies orbiting artificial moons, universities teaching astronomy as politics, cosmos as coexistence sphere, silver lunar lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 13 - Hospital del Bosque Sintético (Nasa + Kikuyu)
+    'hyperrealistic ONE human body from Nasa Colombian and Kikuyu Kenyan peoples, distinctive indigenous Colombian-East African facial features, black hair with traditional feathers and technological medical elements, wearing lab coats printed with living leaves and traditional textiles, brown/dark brown skin tone, in hospitals within hybrid forests of trees and biotechnology, women doctors programming cybernetic fungal therapies, trans-species medicine, filtered forest lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 14 - Ciudad del Juego (Rarámuri + Zulu + Catalanes)
+    'hyperrealistic ONE human body from Rarámuri Mexican, Zulu South African and Catalan Spanish peoples, distinctive indigenous Mexican-African-Mediterranean facial features, long black hair with traditional ornaments and technological elements, wearing running shoes leaving light trails with fusion traditional garments, bronze/dark/olive skin tone, in city organized in circular stadiums, political decisions made in collective games, democracy as play, playful multicolored lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 15 - Universidad del Lago Titicaca (Aymara + Quechua)
+    'hyperrealistic ONE human body from Aymara Bolivian and Quechua Peruvian peoples, distinctive high-altitude Andean facial features, long black braided hair with traditional gold ornaments, wearing totora reed fiber capes with solar circuits and community tablets with runasimi software, bronze weathered skin tone, in floating campus built by communities on sacred lake, each cycle beginning with water offerings to living subject, golden lacustrine lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 16 - Red Yoruba de Cosmopolítica Digital (Nigeria/Benín)
+    'hyperrealistic ONE human body from Yoruba Nigerian and Beninese peoples, distinctive West African facial features, elaborate black hair with traditional gele head wraps containing oral memory sensors, wearing flowing agbada with bracelets storing proverbs, rich dark brown skin with traditional facial marks, in servers installed in Ifá temple-houses, Ifá consultations translated into community algorithms for collective decisions, warm temple lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 17 - Ciudades del Trigo (Vascos + Sami)
+    'hyperrealistic ONE human body from Basque Spanish and Sami Scandinavian peoples, distinctive Iberian-Arctic facial features, brown/blonde hair with traditional ornaments and technological elements, wearing plant fiber boots with bird-drones monitoring grain and traditional textiles fusion, olive/fair skin tone, in northern European cities built in collectively managed wheat fields, harvest festivals becoming political assemblies, golden field lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 18 - Archivo Shipibo del Kené Digital (Amazonía)
+    'hyperrealistic ONE human body from Shipibo-Konibo Amazonian Peruvian peoples, distinctive indigenous Amazonian facial features, long straight black hair with traditional feather ornaments and digital elements, wearing embroidered suits with kené patterns functioning as interactive screens, warm bronze skin with traditional geometric body paint, in servers installed in malocas where ícaros are recorded as visual digital patterns, recognizing Shipibo aesthetics as 21st century visual epistemology, filtered Amazonian lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 19 - Puerto Ashanti de Oro Digital (Ghana)
+    'hyperrealistic ONE human body from Ashanti Ghanaian peoples, distinctive West African facial features, intricately braided black hair with traditional gold ornaments and technological elements, wearing 3D printed recycled gold jewelry with interactive wax cloth fabrics, rich dark brown skin with traditional akan markings, in futuristic markets in Kumasi with symbolic currencies based on adinkra, each transaction accompanied by proverbs, resignifying gold as community economy, vibrant mercantile lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 20 - Universidad Mapuche del Wallmapu (Chile/Argentina)
+    'hyperrealistic ONE human body from Mapuche Chilean and Argentinian peoples, distinctive indigenous South American facial features, long black hair with traditional trariloncos headbands containing memory chips, wearing ponchos woven with digital fibers and traditional geometric patterns, bronze skin tone, in dispersed campus across rural lof and cities, nguillatun ceremonies marking academic calendar rhythms, transforming Western education, ceremonial Mapuche lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 21 - Parlamento Tuareg de Arena (Sahara)
+    'hyperrealistic ONE human body from Tuareg Saharan peoples, distinctive North African nomadic facial features, wrapped in traditional blue tagelmust with solar filters and antennas, wearing flowing desert robes with technological elements, olive-bronze desert-weathered skin tone, in sand dunes converted into holographic agoras, winds considered political advisors, displaced people reinventing nomadic politics as global model, holographic desert lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 22 - Red Maya de Tzolk\'in Virtual (Mesoamérica)
+    'hyperrealistic ONE human body from Maya Mesoamerican peoples, distinctive indigenous Mayan facial features, long black hair with jade ornaments and time-chip elements, wearing huipiles embroidered with temporal circuits and traditional geometric patterns, warm brown skin with traditional tattoos, in solar servers installed in restored pyramids, tzolk\'in calendar structuring digital navigation, Western linear time substituted by Maya cyclical time, solar pyramid lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 23 - Laboratorio Igbo de Semillas Ancestrales (Nigeria)
+    'hyperrealistic ONE human body from Igbo Nigerian peoples, distinctive West African facial features, elaborate black hair with traditional ornaments and technological elements, wearing traditional isiagu with kola nut bracelets registering genealogies, rich dark brown skin with traditional scarification, in living seed banks in villages and rural universities, each planting as ancestral memory act, agriculture resignified as future biotechnology, ancestral rural lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 24 - Ciudad Zapoteca del Viento (Oaxaca)
+    'hyperrealistic ONE human body from Zapotec Oaxacan peoples, distinctive indigenous Mesoamerican facial features, long black hair with traditional ornaments and wind-capture elements, wearing rebozos that capture wind energy with traditional geometric patterns, brown skin tone, in city designed with community wind generators, wind treated as sacred energy and political voice, wind technology without green extractivism but community autonomy, natural wind lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 25 - Ixmayel, Rectorx del Muxeverse (Zapoteca)
+    'hyperrealistic ONE human body from Zapotec Oaxacan peoples, distinctive indigenous Mesoamerican muxe facial features with androgynous beauty, long black hair with traditional flowers and technological elements, wearing ceremonial huipiles with contemporary cuts and traditional geometric patterns, brown skin tone, as rector of Interplanetary University of the Isthmus, directing legal programs forcing corporations to be accountable to indigenous communities, transforming tolerated gender into architect of global legal systems, ceremonial muxe lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 26 - Sadia, Canciller de HijraNet (Sur de Asia)
+    'hyperrealistic ONE human body from South Asian hijra peoples, distinctive South Asian androgynous facial features, elaborate black hair with traditional ornaments and digital elements, wearing fusion saris with technological patterns and traditional hijra jewelry, warm brown skin tone, as chancellor of Global South Confederation, leading transcontinental energy redistribution treaties using digital protocols inspired by hijra blessings, transforming spiritual bodies into diplomatic architecture, Global South diplomatic lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 27 - Wakinyan, Portavoz Two-Spirit (Lakota)
+    'hyperrealistic ONE human body from Lakota Native American peoples, distinctive indigenous Plains facial features with Two-Spirit sacred androgynous beauty, long black braided hair with eagle feathers and modern elements, wearing traditional regalia with contemporary cuts and sacred patterns, bronze skin tone, as spokesperson for Planetary Parliament of Climate Justice, articulating indigenous and queer demands in mandatory environmental policies, criminalized spiritual place now guiding global ecological governance, sacred Two-Spirit lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 28 - Lagalaga, Ministra de Ciudades Oceánicas (Samoa)
+    'hyperrealistic ONE human body from Samoan fa\'afafine peoples, distinctive Polynesian androgynous facial features, long flowing black hair with traditional Pacific ornaments and aquatic technological elements, wearing fusion ie toga with contemporary design and traditional patterns, warm bronze skin tone, as minister of urbanism and climate migrations, designing floating habitable territories for millions of climate displaced people, transforming marginal identity into oceanic geopolitical leadership, oceanic fa\'afafine lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 29 - Bissu Kalla, Custodix del Archivo Mundial (Bugis)
+    'hyperrealistic ONE human body from Bugis Sulawesi peoples, distinctive Indonesian androgynous bissu facial features with sacred androgynous beauty, black hair with traditional ornaments and digital archival elements, wearing traditional bissu ceremonial garments with contemporary cuts and sacred patterns, warm brown skin tone, as keeper of World Archive of Humanity, ensuring all peoples\' memories have equal access in 22nd century, androgynous spirituality as guarantee of epistemic justice, ancestral bissu lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 30 - Luna Travesti, Presidenta de la Red Andina (Argentina)
+    'hyperrealistic ONE human body from Argentine travesti peoples, distinctive South American transgender facial features with androgynous beauty, long flowing black hair with technological ornaments and traditional elements, wearing contemporary trans activist garments with traditional Andean patterns and colors, warm bronze skin tone, as travesti activist heir of 20th century struggles, president of Andean Network of Community States, promoting constitutions recognizing trans and NB bodies as living heritage of peoples, transforming persecuted into constitutional principle, Andean network lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 31 - Bakla Reyes, Estratega de Comunicación Global (Filipinas)
+    'hyperrealistic ONE human body from Filipino bakla peoples, distinctive Southeast Asian androgynous facial features, elaborate black hair with traditional Filipino ornaments and communication technology, wearing fusion barong tagalog with contemporary cuts and traditional patterns, warm brown skin tone, as bakla figure recognized before Spanish colonization, communication strategist in General Assembly of Pluriverse, designing political campaigns in diverse languages destroying English hegemony, transformed from object of mockery to strategic voice of Global South, Filipino archipelago lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 32 - Mahu Kealoha, Gobernadorx de Archipiélagos Educativos (Hawái)
+    'hyperrealistic ONE human body from Hawaiian mahu kanaka maoli peoples, distinctive Polynesian androgynous facial features with sacred mahu beauty, long flowing black hair with traditional lei and aquatic technological elements, wearing fusion traditional Hawaiian garments with contemporary educational design and Pacific patterns, warm bronze skin tone, as governor of Pacific Educational Archipelagos, directing inter-oceanic educational system where universities are floating and teach NB-binary cosmology, mahu knowledge erased by Christian colonization now educational governance, Pacific educational lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 33 - Ardita, Hacker Burrnesha (Balcanes)
+    'hyperrealistic ONE human body from Balkan burrnesha peoples, distinctive Eastern European androgynous facial features, short practical hair with traditional Balkan ornaments and digital hacking elements, wearing fusion traditional Albanian/Montenegrin garments with contemporary cybersecurity design and technological patterns, olive skin tone, as descendant of Balkan burrnesha, state hacker and digital security minister, developing NB protocols to protect peoples from corporate and state surveillance, transformed from bodies disciplined by patriarchy to hackers dismantling digital patriarchy, Balkan mountain lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 34 - AmaLisa, Copresidentx de Kanathari Cosmopolis (Benín)
+    'hyperrealistic ONE human body from Beninese peoples inspired by Mawu-Lisa, distinctive West African androgynous facial features embodying divine duality, elaborate black hair with traditional Dahomey ornaments and technological elements, wearing fusion traditional garments with contemporary cuts and sacred dual-gender patterns, rich dark brown skin tone, as co-president inspired by Mawu-Lisa androgynous divinity of Dahomey, directing Kanathari African city of the future, designing constitution forcing all politics to include binary and non-binary perspectives without hierarchy, ancestral androgynous divinity guiding contemporary governance, divine androgynous lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 35 - Universidad Sami del Joik Climático (Escandinavia)
+    'hyperrealistic ONE human body from Sami Scandinavian peoples, distinctive Arctic indigenous facial features, long blonde/brown hair with traditional Sami ornaments and meteorological sensors, wearing traditional gákti with contemporary climate technology and reindeer hide patterns, fair weathered skin tone, in Arctic universities where joik songs control urban meteorology, chants invoking landscapes as science, joik no longer criminalized as paganism but flag of Sami resistance guiding climate governance, Arctic boreal lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 36 - Red Kikuyu de Árboles Sagrados (Kenia)
+    'hyperrealistic ONE human body from Kikuyu Kenyan peoples, distinctive East African facial features, black hair with traditional ornaments and tree sensor technology, wearing traditional Kikuyu garments with living leaf patterns and contemporary ecological design, rich dark brown skin tone, in sacred tree networks with sensors as assemblies, sacred mugumo tree in spiritual ecological governance, trees as democratic participants not resources, filtered forest lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 37 - Archivo Corso de Voces de Mar (Mediterráneo)
+    'hyperrealistic ONE human body from Corsican Mediterranean peoples, distinctive Mediterranean facial features, dark wavy hair with coral ornaments and maritime technology, wearing traditional Corsican garments with sea-pattern textiles and acoustic elements, olive skin tone, in maritime networks of polyphonic singing, paghjella for oceanic governance, Corsican polyphonic singing as maritime political system, Mediterranean marine lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 38 - Universidad Frisona de Agua (Países Bajos)
+    'hyperrealistic ONE human body from Frisian Dutch peoples, distinctive Northern European facial features, blonde hair with traditional ornaments and hydraulic technology, wearing traditional Frisian garments with water-adaptive patterns and dike management elements, fair skin tone, in floating cities pedagogy, collective dike management as water education, Frisian water knowledge as educational governance, Dutch aquatic lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 39 - Cosmología Wolof de la Palabra (Senegal)
+    'hyperrealistic ONE human body from Wolof Senegalese peoples, distinctive West African facial features, elaborate black hair with traditional gele and digital communication elements, wearing traditional boubou with technological patterns and voice-storing jewelry, rich dark brown skin tone, in social networks based on proverbs, proverbial orality as digital algorithm, Wolof philosophical authority in digital era, warm Sahelian lighting, 8K photorealistic details, honoring pueblos originarios',
 
-    // 40 - Soberanos de lo No Trazado: Sonrisas tras el Deshacer de Europa
-    'de origen no blanco, hiperrealista UN cuerpo humano, rostro orgulloso y sonriente, sin rasgos faciales visibles (silueta enmascarada o velada), regalia real medieval reimaginada sin Europa, coronas y bastón tallados en bio-aleaciones nuevas, vestidos largos y capas en pigmentos novedosos, simbiontes indígenas bioluminiscentes tejidos en atuendo ceremonial pacífico, diversidad de edad y tipo de cuerpo, estética de cuento de hadas con luz fotorrealista, siluetas no gráficas de hogueras inquisitoriales a lo lejos, fondo oscuro simple con formas geométricas sutiles, iluminación cinematográfica dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 41 - Corona de Muchos Ríos: Realeza sin Imperio
-    'de origen no blanco, hiperrealista UN cuerpo humano, postura digna y sonriente, sin rasgos faciales visibles (suave oclusión), realeza hispana medieval reimaginada sin la existencia de Europa, reyes y reinas como cuidadores, corona de coral-metal vivo y bastón de fibra-madera trenzada, vestidos largos y capas fluidas, simbiontes indígenas bioluminiscentes incrustados en textiles pacíficos, estética de cuento de hadas de bordes nítidos, piras de inquisición no gráficas muy al fondo como memoria, fondo minimalista con patrones sutiles, iluminación cinematográfica dramática, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 42 - Las Cenizas No Gobiernan: Inquisición Desaprendida
-    'de origen no blanco, hiperrealista UN cuerpo humano, porte sereno y orgulloso, sin rasgos faciales visibles (máscara sombreada), atuendo medieval reautor: vestiduras papales reales recodificadas como guardianía comunal, corona y bastón re‑herramientados para sanar, vestidos largos y capas, paleta de cuento de hadas, siluetas no gráficas de hogueras inquisitoriales (mujeres en la estaca insinuadas) a distancia, simbiontes indígenas bioluminiscentes rodeando el cuerpo como constelaciones, fondo simple de bajo contraste, luz de contorno cinematográfica, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 43 - El Papado del Bosque que Nunca Conquistó
-    'de origen no blanco, hiperrealista UN cuerpo humano, sonrisa confiada y suave, sin rasgos faciales visibles (velo/ojos abstractos), entidad papal real católica reimaginada en un mundo sin Europa, motivos de realeza hispana decolonizados: corona de micelio-oro, bastón sembrador, vestidos largos y capas en sedas biopolímero, simbiontes indígenas bioluminiscentes como bordado luminoso, estética de cuento de hadas con brillos precisos, fuegos inquisitoriales no gráficos amortiguados tras arboledas, fondo geométrico limpio, luz dramática y pacífica, detalles fotorrealistas 8K, honrando pueblos originarios',
-    // 44 - Bauhaus Puro: Luz Primaria, Forma Cívica
-    'hiperrealista UN cuerpo humano en gramática Bauhaus pura: círculo, cuadrado y triángulo componen el atuendo; colores primarios como acentos estructurales; materiales honestos (acero, vidrio, fieltro, biopolímero); capa y túnica modulares de costuras funcionales; fondo neutro simple con cuadrícula sutil; iluminación cinematográfica equilibrada, detalles fotorrealistas 8K, honrando pueblos originarios',
+    // 40 - Archivo Sardo de la Murra (Cerdeña)
+    'hyperrealistic ONE human body from Sardinian Italian peoples, distinctive Mediterranean island facial features, dark curly hair with traditional ornaments and gaming technology, wearing traditional Sardinian garments with card game patterns and democratic elements, olive skin tone, in ritual card games as digital democracy, traditional game reinvented as politics, Sardinian autonomy through gaming governance, Mediterranean island lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 41 - Coro Occitano de Justicia (Francia)
+    'hyperrealistic ONE human body from Occitan French peoples, distinctive Southern French facial features, brown hair with traditional ornaments and judicial technology, wearing traditional Occitan garments with troubadour patterns and justice elements, olive skin tone, in courts that deliberate singing, troubadour song as judicial system, Occitan language as justice governance, Provençal lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 42 - Hospital Yoruba de Danza Egungun (Nigeria)
+    'hyperrealistic ONE human body from Yoruba Nigerian peoples, distinctive West African facial features, elaborate black hair with traditional ornaments and holographic dance technology, wearing traditional agbada with egungun patterns and medical elements, rich dark brown skin tone, in urban medicine with holographic dances, ancestors as community doctors, Yoruba ancestral medicine as urban healthcare, warm temple lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 43 - Archivo Sami de Renos Digitales (Escandinavia)
+    'hyperrealistic ONE human body from Sami Scandinavian peoples, distinctive Arctic indigenous facial features, long blonde/brown hair with traditional ornaments and GPS technology, wearing traditional gákti with reindeer patterns and navigation elements, fair weathered skin tone, in cultural GPS guided by holographic reindeer, ancestral herding as digital navigation, Sami pastoralism as technological guidance, Arctic tundra lighting, 8K photorealistic details, honoring pueblos originarios',
+    // 44 - Arquitectura Catalana del Canto (Europa)
+    'hyperrealistic ONE human body from Catalan Spanish peoples, distinctive Mediterranean facial features, brown hair with traditional ornaments and architectural technology, wearing traditional Catalan garments with musical patterns and building elements, olive skin tone, in buildings that sing urban liturgies, Cant de la Sibil·la as musical architecture, Catalan sacred song as urban design, Gothic cathedral lighting, 8K photorealistic details, honoring pueblos originarios',
   ];
 
   // 40 Prompts (FR)
@@ -627,37 +627,37 @@ export default function Home() {
 
   // 40 Essay titles (DE)
   const worldNamesDE = [
-    'Ancestrale Neon-Befreiung: Ahnen leuchten in Schaltkreis-Filigran; Haute Couture wird Technologie, Tanz wird Navigation, und die Zukunft wird in goldener Geometrie geschrieben.',
-    'Wald-Schaltkreis-Wächter: Souveränität verschlüsselt in Perlenarbeit und Rinde; der Code läuft mit dem Hirsch, Drohnen lernen die Wege des Vertrags.',
-    'Aufstand der Regenbogen-Matrix: geschlechterexpansive Freude hackt das Netz; Zuneigung ist Infrastruktur, Fürsorge umgeht Repression, und die Nacht schreibt Politik.',
-    'Halbmond-Messing-Revolution: Dampf und Schrift co-konstruieren Würde; Kupferschleier schützen Freiheiten, Zahnräder erinnern Karawanen unter Wüstenhimmel.',
-    'Quanten-Mestiza-Traumlandschaft: Pyramiden brechen Möglichkeiten; Geschichten überlagern sich ohne Löschung, Sprache flechtet kosmische Straßen.',
-    'Mandala-LED-Erwachen: Meditation trifft Mikrocontroller; das Muster wird Algorithmus der Mitgefühlspraxis, Stille erhellt die Städte.',
-    'Korall-Tech Ozeanaufstieg: Riffe lehren Entwurf in Gezeitenmaß; Exoanzüge wachsen wie Schalen, Navigation horcht Glasfaser-Walen der Dämmerung.',
-    'Silizium-Oasen-Mirage: Kalligrafie wird Code im Wind; Gärten bewässern Bandbreite, Schattenarchitekturen beherbergen zivile Reziprozität.',
-    'Lotus-Schaltkreis-Heiligtum: Hingabe leitet über offene Protokolle; Tempel summen Solargesänge, Gerechtigkeit wird als Segen versioniert.',
-    'Planetarer Remix-Aufruhr: Kulturen sampeln einander mit Einwilligung; Karten werden als Allmende neu gezeichnet, die Tanzfläche legislatiert im 4/4.',
-    'Renaissance des Meme-Barden: der Hofnarr kehrt als Netzwerkpoet zurück; Satire-Schriftrollen animieren öffentlichen Code, Zärtlichkeit entwaffnet Viralität, Lachen wird ein ziviles Protokoll.',
-    'Ringlicht-Dschungel-Safari: Ringlichter jagen Glühwürmchen, während Fürsorge der Reichweite nachsetzt; Einfluss lernt Demut zwischen Lianen und Chor.',
-    'Bürokratie-Boss-Labyrinth: wir steigen durch Ordner wie durch Schichten; Stempel verlieren Macht, sobald die Korridore von denen kartiert sind, die sie gehen.',
-    'Retro-VHS-Aerobic: Schweiß wird Pixel, Atem wird Zeile; kollektive Freude probt eine Politik von Rhythmus und Ruhe.',
-    'Pizza-Mecha-Express: Logistik wird Straßentheater; warme Stücke schneiden durch kalte Geschwindigkeiten, Lieferwege zeichnen die Stadt als Allmende neu.',
-    'Tempel der Kaffee-Oberherren: Koffein-Liturgie für langsame Aufmerksamkeit; wir mahlen Gerüchte zu Wahrheit und gießen Zukünfte ohne Extraktion.',
-    'Quanten-Katzenhirt-Liga: Ungewissheit schnurrt; Koordination ist Spiel, der Laser ist Zustimmung, Neugier schreibt die Regeln.',
-    'Datengewölbe des Disco-Archivisten: Glitzer katalogisiert Erinnerung; jede Basslinie zitiert eine Linie, jede Fußnote ruft den Körper zurück.',
-    'Krypto-Mond-Bergbau-Karaoke: spekulative Chöre im Mondstaub; Wert wird gesungen, Schulden harmonisiert, Münzen schmelzen zu Fürsorge.',
-    'Debug-Arena des Cloud-Zauberers: wir singen Stack-Traces zu Zaubern; Bugs werden Lehrer, Governance kompiliert in Menschenzeit.',
-    'Pluriversaler Versammlungs-Nexus: ein lebendes Parlament, in dem Grenz-Wissen eine Welt vieler Welten komponiert; dekoloniale Reziprozität, Übersetzung ohne Auslöschung, geteilte Fürsorge für Zukünfte.',
-    'Commons des Grenzdenkens: eine mestiza Schnittstelle, wo Schwellen sprechen; Wunden verweben Methode, jeder Übergang verteilt Stimme, Risiko und Reparatur neu.',
-    'Agora der Transmodernität: bürgerschaftliche Schaltkreise interdependenter Modernitäten; Kritik wird Gastfreundschaft, das Beste der Moderne wird vom Süden der Vernunft remixt.',
-    'Netz des sozialisierten Machtflusses: föderierte Räte der Fürsorge ersetzen Besitz durch Verwahrung; selbstverwaltete Institutionen, kooperativer Code, atmende Autorität.',
-    'Signal-Garten der Heterarchie: geschichtete Entscheidungsökologien, bestäubt von vielen Logiken; keine einzelne Wurzel, nur verflochtene Nahrung für multispezielles Gedeihen.',
-    'Kritische kosmopolitische Schmiede: Diaspora härtet Solidarität zu Werkzeugen, die in lokale Hände passen; Verträge werden aus Erinnerung geschmiedet, nicht als Schablone auferlegt.',
-    'Observatorium des epistemischen Südens: Sterne umbenannt von Gemeinschaften, die nie aufgehört haben zu wissen; Forschung umkreist Würde, Daten kehren als Verwandte heim.',
-    'Labor der Debug-Kolonialität: Fehler zurückverfolgt zu verborgenen Abhängigkeiten des Imperiums; Institutionen refaktorieren, bis Extraktionscode nicht mehr kompiliert.',
-    'Konstellation der Diversalität: ein Himmel der Übereinkünfte, wo Differenz Grammatik der Vereinigung ist; Navigation geschieht im Zuhören quer hindurch.',
-    'Atrium der Wissensgeopolitik: eine öffentliche Wirbelsäule für Bibliotheken der Verdrängten; Zitation repariert Linien und öffnet Türen nach außen.',
-    'Resonator der Körperpolitiken: Technologien verstärken situierte Wahrheiten; Fleisch wird Syllabus, Empfindung Methode, Zustimmung Signal.',
+    'Gletscher-Universität (Quechua + Sami): Campus gebaut in intelligenten Gletschern im Dialog mit Klimasensoren; Quechua- und Sami-Frauen lehren Eis-Epistemologien; Wissenschaft geschrieben aus Körper-Territorien.',
+    'Fluss-Stadt (Nasa + Wolof + Katalanen): schwimmende Stadt in Wasserläufen ohne Mauern, wo Wasser den Urbanismus definiert; Universitäten erforschen Wassergerechtigkeit; Politik entsteht aus Wasser als Hauptakteur.',
+    'Ñande-Plattform (Guaraní + Igbo): autonomes digitales Netzwerk mit Solarservern in Dörfern; Jugendliche erstellen Bildungssoftware in Guaraní und Igbo; Internet als Verwandtschaftsnetzwerk, nicht Markt.',
+    'Mais-Metapolis (Zapoteken + Ashanti): vertikale Stadt, wo Mais architektonische Struktur und Metapher für genetischen Code ist; Gemeinschafts-Bioingenieurinnen editieren Samen ohne Konzerne; Biotechnologie ohne Extraktivismus.',
+    'Erinnerungs-Archipel (Rarámuri + Bretonen): Inseln verbunden durch unterseeische Glasfaserbrücken; Archipel-Universitäten publizieren in lokalen und digitalen Sprachen; Erinnerung nicht archiviert, sondern im Netzwerk performt.',
+    'Körper-Stadt (Mapuche + Masai): Städte gebaut als gigantische Anatomien, wo Straßen Energieadern sind; Arzt-Künstler unterrichten urbane Medizin als Performance; Gesundheit, Kunst und Urbanismus verschmelzen.',
+    'Schmetterlings-Observatorium (Mixe + Tuareg): mobile Labore folgen Schmetterlings-Migrationsrouten; Wissenschaftlerinnen entwickeln Meteorologie mit Flügel-Algorithmen; nicht-anthropozentrische Klimawissenschaft.',
+    'Digitale Aurora (Sami + Quechua + Yoruba): Städte unter Nordlichtern kontrolliert mit Bioalgorithmen; Nacht-Universitäten unterrichten in projizierten Auroren; Wissen als immersive Erfahrung.',
+    'Unterwasser-Universität (Shipibo + Igbo + Friesen): Unterwasser-Campus mit durchscheinenden Kuppeln und künstlichen Korallen; Forschung in ozeanischer Ethik; Meereswissenschaft mit Gemeinschaftskosmologie.',
+    'Orale Algorithmische Pangäa (Wolof + Basken): städtische Netzwerke, wo Sprichwörter Algorithmen regieren; Programmierer rezitieren auf Plätzen zur Software-Aktualisierung; KI basiert auf Mündlichkeit, nicht Daten.',
+    'Samen-Stadt (Maya + Kelten): Gebäude entstehen als Samen und wachsen mit Bewohnern; Universitäten entwerfen pflanzliche Architektur als Lehrplan; Urbanismus als soziale Biologie.',
+    'Kristall-Theater (Korsen + Yoruba): lebende Glas-Kunsthallen ändern sich je nach Emotionen; kollektive Werke, wo Publikum Bühne modifiziert; Kunst als sensorielle Interaktion.',
+    'Mond-Netzwerk (Aymara + Sarden + Gnawa): schwimmende Kolonien umkreisen künstliche Monde; Universitäten lehren Astronomie als Politik; Kosmos als Sphäre des Zusammenlebens.',
+    'Synthetisches Wald-Hospital (Nasa + Kikuyu): Krankenhäuser in Hybrid-Wäldern aus Bäumen und Biotechnologie; Ärztinnen programmieren Therapien mit kybernetischen Pilzen; Trans-Spezies-Medizin.',
+    'Spiel-Stadt (Rarámuri + Zulu + Katalanen): Stadt organisiert in kreisförmigen Stadien; politische Entscheidungen in kollektiven Spielen getroffen; Demokratie als Spiel.',
+    'Titicacasee-Universität (Aymara + Quechua): schwimmende Campus gebaut von Aymara- und Quechua-Gemeinschaften; jeder Zyklusbeginn opfert dem Wasser als lebendem Subjekt; erste grenzüberschreitende Universität von Ursprungsvölkern geschaffen.',
+    'Yoruba-Netzwerk für Digitale Kosmopolitik (Nigeria/Benin): Server installiert in Ifá-Tempelhäusern; Ifá-Konsultationen übersetzt in Gemeinschaftsalgorithmen; stellt yoruba philosophische Autorität als dekoloniale KI wieder her.',
+    'Weizen-Städte (Basken + Sami): Städte in Nordeuropa auf kollektiv verwalteten Weizenfeldern; Erntefeste werden zu Versammlungen, wo das Land abstimmt; marginalisierte europäische Völker als Designer von Agro-Städten.',
+    'Shipibo Kené Digital-Archiv (Amazonien): Server installiert in Malocas; Ícaros aufgenommen als visuelle digitale Muster; Shipibo-Ästhetik anerkannt als visuelle Epistemologie des 21. Jahrhunderts.',
+    'Ashanti Digital-Gold-Hafen (Ghana): futuristische Märkte in Kumasi mit symbolischen Währungen basierend auf Adinkra; jede Transaktion begleitet von Sprichwörtern; resignifiziert Gold als Unterstützung der Gemeinschaftsökonomie.',
+    'Mapuche-Universität von Wallmapu (Chile/Argentinien): Campus verteilt in ländlichen Lof und Städten; Nguillatun-Zeremonien markieren Rhythmen des akademischen Kalenders; transformiert westliche Bildung mit Mapuche-Wissen als zeitgenössische Philosophie.',
+    'Tuareg-Sand-Parlament (Sahara): Dünen verwandelt in Agoras durch Hologramme; Winde als politische Berater betrachtet; durch Grenzen vertriebenes Volk erfindet nomadische Politik als globales Modell neu.',
+    'Maya Tzolk\'in Virtuelles Netzwerk (Mesoamerika): Solarserver in restaurierten Pyramiden; Tzolk\'in-Kalender strukturiert digitale Navigation; westliche lineare Zeit ersetzt durch Maya-Zykluszeit.',
+    'Igbo-Labor für Ahnen-Samen (Nigeria): lebende Samenbanken in Dörfern und ländlichen Universitäten; jede Pflanzung ist Akt der Ahnenerinnerung; Landwirtschaft resignifiziert als Biotechnologie der Zukunft.',
+    'Zapotekische Wind-Stadt (Oaxaca): Stadt entworfen mit Gemeinschafts-Windgeneratoren; Wind behandelt als heilige Energie und politische Stimme; Windtechnologie ohne grünen Extraktivismus.',
+    'Ixmayel, Rektorin des Muxeverse (Zapotekisch): zapotekische Nachkomme, Erbin der Muxe-Tradition; Rektorin der Interplanetaren Universität des Isthmus; leitet Rechtsprogramme, die Konzerne zur Rechenschaft gegenüber Ursprungsgemeinschaften zwingen.',
+    'Sadia, Kanzlerin von HijraNet (Südasien): Hijra verbunden mit rituellen Traditionen seit Mahabharata; Kanzlerin der Konföderation des Globalen Südens; führt transkontinentale Verträge zur Energieumverteilung.',
+    'Wakinyan, Two-Spirit-Sprecherin (Lakota): nimmt präkoloniale Two-Spirit-Spiritualität wieder auf; Sprecherin des Planetaren Parlaments für Klimagerechtigkeit; artikuliert indigene und queere Forderungen in obligatorische Umweltpolitiken.',
+    'Lagalaga, Ministerin für Ozeanische Städte (Samoa): Fa\'afafine-Erbin historisch anerkannter sozialer Identität; Ministerin für Urbanismus und Klimamigration; entwirft schwimmende Territorien für klimabedingt Vertriebene.',
+    'Bissu Kalla, Hüterin des Weltarchivs (Bugis): Bissu Bugis androgyne Priesterin mit Ahnenrolle; verantwortlich für das Weltarchiv der Menschheit; stellt sicher, dass Völkererinnerungen im 22. Jahrhundert gleichberechtigt zugänglich sind.',
+    'AmaLisa, Co-Präsidentin von Kanathari Cosmopolis (Benin): Co-Präsidentin inspiriert von Mawu-Lisa, androgyner Gottheit von Dahomey; leitet Kanathari, afrikanische Stadt der Zukunft; entwirft Verfassung, die alle Politik verpflichtet, binäre und nicht-binäre Perspektiven ohne Hierarchie einzuschließen.',
     'Dekoloniales Datengewölbe: verschlüsselte Allmende, in der Souveränität heilig ist; Genehmigungen sind Zeremonien, jede Anfrage erweist Respekt.',
     'Studio des subalternen Signals: Dachsender machen Gerücht zu Archiv; Frequenzen flechten Nachbarschaften zur Gegen-Öffentlichkeit.',
     'Zapatistische Wolken-Kommune: Code, der gehorcht, indem er gemeinsam anleitet; Infrastruktur wie Milpa — reziprok, resilient, geteilt.',
@@ -773,37 +773,37 @@ export default function Home() {
 
   // 40 Essay titles (PT)
   const worldNamesPT = [
-    'Libertação Neon Ancestral: ancestrais brilham em filigrana de circuitos; alta-costura vira tecnologia, a dança vira navegação e o futuro se escreve em geometria dourada.',
-    'Guardiões da Floresta-Circuito: soberania cifrada em miçanga e casca; o código corre com o veado e drones aprendem trilhas de tratado.',
-    'Levantamento da Matriz Arco-Íris: alegria expansiva de gênero hackeia a rede; afeto é infraestrutura, cuidado contorna repressão e a noite escreve política.',
-    'Revolução de Latão Crescente: vapor e escrita co-engenheiram dignidade; véus de cobre protegem liberdades e engrenagens lembram caravanas sob céus de deserto.',
-    'Paisagem Onírica Mestiza Quântica: pirâmides refratam possibilidades; histórias se sobrepõem sem apagamento e a língua trança ruas cósmicas.',
-    'Despertar LED Mandala: meditação encontra microcontrolador; padrão vira algoritmo de compaixão e o silêncio acende cidades.',
-    'Ascensão Oceânica Coral-Tech: recifes ensinam design em escala de maré; exotrajes crescem como conchas e a navegação escuta baleias de fibra óptica no crepúsculo.',
-    'Miragem do Oásis de Silício: caligrafia vira código no vento; jardins irrigam banda larga e arquiteturas de sombra abrigam reciprocidade cívica.',
-    'Santuário de Circuito Lótus: devoção roteia por protocolos abertos; templos zumbem cantos solares e justiça é versionada em bênçãos.',
-    'Revolta Remix Planetária: culturas sampleiam com consentimento; mapas se redesenham como comuns e a pista legisla em 4/4.',
-    'Renascença do Bardo Meme: o bobo retorna poeta em rede; pergaminhos satíricos animam código público, ternura desarma viralidade e riso vira protocolo cívico.',
-    'Safári de Selva com Ring Light: aros perseguem vagalumes enquanto o cuidado persegue alcance; influência aprende humildade entre lianas e coro.',
-    'Labirinto Chefe da Burocracia: descemos por pastas como estratos; carimbos perdem poder quando quem caminha mapeia o corredor.',
-    'Aeróbica VHS Retrô: suor vira pixel e fôlego linha de varredura; alegria coletiva ensaia política de ritmo e descanso.',
-    'Corrida Mecha da Pizza: logística vira teatro de rua; fatias quentes cortam velocidades frias e rotas redesenham a cidade como comum.',
-    'Templo dos Senhores do Café: liturgia de cafeína para atenção lenta; moemos boatos em verdade e servimos futuros sem extração.',
-    'Quanten-Katzenhirt-Liga: Ungewissheit schnurrt; Koordination ist Spiel, der Laser ist Zustimmung, Neugier schreibt die Regeln.',
-    'Datengewölbe des Disco-Archivisten: Glitzer katalogisiert Erinnerung; jede Basslinie zitiert eine Linie, jede Fußnote ruft den Körper zurück.',
-    'Krypto-Mond-Bergbau-Karaoke: spekulative Chöre im Mondstaub; Wert wird gesungen, Schulden harmonisiert, Münzen schmelzen zu Fürsorge.',
-    'Debug-Arena des Cloud-Zauberers: wir singen Stack-Traces zu Zaubern; Bugs werden Lehrer, Governance kompiliert in Menschenzeit.',
-    'Pluriversaler Versammlungs-Nexus: ein lebendes Parlament, in dem Grenz-Wissen eine Welt vieler Welten komponiert; dekoloniale Reziprozität, Übersetzung ohne Auslöschung, geteilte Fürsorge für Zukünfte.',
-    'Commons des Grenzdenkens: eine mestiza Schnittstelle, wo Schwellen sprechen; Wunden verweben Methode, jeder Übergang verteilt Stimme, Risiko und Reparatur neu.',
-    'Agora der Transmodernität: bürgerschaftliche Schaltkreise interdependenter Modernitäten; Kritik wird Gastfreundschaft, das Beste der Moderne wird vom Süden der Vernunft remixt.',
-    'Netz des sozialisierten Machtflusses: föderierte Räte der Fürsorge ersetzen Besitz durch Verwahrung; selbstverwaltete Institutionen, kooperativer Code, atmende Autorität.',
-    'Signal-Garten der Heterarchie: geschichtete Entscheidungsökologien, bestäubt von vielen Logiken; keine einzelne Wurzel, nur verflochtene Nahrung für multispezielles Gedeihen.',
-    'Kritische kosmopolitische Schmiede: Diaspora härtet Solidarität zu Werkzeugen, die in lokale Hände passen; Verträge werden aus Erinnerung geschmiedet, nicht als Schablone auferlegt.',
-    'Observatorium des epistemischen Südens: Sterne umbenannt von Gemeinschaften, die nie aufgehört haben zu wissen; Forschung umkreist Würde, Daten kehren als Verwandte heim.',
-    'Labor der Debug-Kolonialität: Fehler zurückverfolgt zu verborgenen Abhängigkeiten des Imperiums; Institutionen refaktorieren, bis Extraktionscode nicht mehr kompiliert.',
-    'Konstellation der Diversalität: ein Himmel der Übereinkünfte, wo Differenz Grammatik der Vereinigung ist; Navigation geschieht im Zuhören quer hindurch.',
-    'Atrium der Wissensgeopolitik: eine öffentliche Wirbelsäule für Bibliotheken der Verdrängten; Zitation repariert Linien und öffnet Türen nach außen.',
-    'Resonator der Körperpolitiken: Technologien verstärken situierte Wahrheiten; Fleisch wird Syllabus, Empfindung Methode, Zustimmung Signal.',
+    'Universidade das Geleiras (Quechua + Sami): campus construído dentro de geleiras inteligentes dialogando com sensores climáticos; mulheres quechuas e sami ensinam epistemologias do gelo; ciência escrita desde corpos-territórios.',
+    'Cidade-Rio (Nasa + Wolof + Catalãs): cidade flutuante em cursos d\'água sem muros, onde a água define o urbanismo; universidades pesquisam justiça hídrica; política emerge da água como ator principal.',
+    'Plataforma Ñande (Guarani + Igbo): rede digital autônoma com servidores solares em aldeias; jovens criam software educativo em guarani e igbo; internet como rede de parentesco, não mercado.',
+    'Metápolis do Milho (Zapotecas + Ashanti): cidade vertical onde milho é estrutura arquitetônica e metáfora de código genético; bioengenheiras comunitárias editam sementes sem corporações; biotecnologia sem extrativismo.',
+    'Arquipélago da Memória (Rarámuri + Bretãos): ilhas conectadas por pontes de fibras óticas submarinas; universidades arquipélago publicam em línguas locais e digitais; memória não arquivada, performada em rede.',
+    'Corpo-Cidade (Mapuche + Masai): cidades construídas como anatomias gigantes onde ruas são veias de energia; médicos-artistas ensinam medicina urbana como performance; saúde, arte e urbanismo se fundem.',
+    'Observatório de Borboletas (Mixe + Tuareg): laboratórios móveis seguindo rotas migratórias de borboletas; cientistas desenvolvem meteorologia com algoritmos de asas; ciência climática não-antropocêntrica.',
+    'Aurora Digital (Sami + Quechua + Yoruba): cidades sob auroras boreais controladas com bio-algoritmos; universidades noturnas dão aulas em auroras projetadas; conhecimento como experiência imersiva.',
+    'Universidade Submarina (Shipibo + Igbo + Frísios): campus subaquático com domos translúcidos e corais artificiais; pesquisa em ética oceânica; ciência marinha com cosmologia comunitária.',
+    'Pangeia Algorítmica Oral (Wolof + Bascos): redes urbanas onde provérbios governam algoritmos; programadores recitam em praças para atualizar software; IA baseada em oralidade, não dados.',
+    'Cidade-Semente (Maya + Celtas): edifícios nascem como sementes e crescem com habitantes; universidades projetam arquitetura vegetal como currículo; urbanismo como biologia social.',
+    'Teatro de Cristal (Corsos + Yorubas): salas de arte de vidro vivo mudando conforme emoções; obras coletivas onde público modifica cenário; arte como interação sensorial.',
+    'Rede Lunar (Aymara + Sardos + Gnawa): colônias flutuantes orbitando luas artificiais; universidades ensinam astronomia como política; cosmos como esfera de convivência.',
+    'Hospital da Floresta Sintética (Nasa + Kikuyu): hospitais em florestas híbridas de árvores e biotecnologia; médicas programam terapias com fungos cibernéticos; medicina trans-espécies.',
+    'Cidade do Jogo (Rarámuri + Zulu + Catalãs): cidade organizada em estádios circulares; decisões políticas tomadas em jogos coletivos; democracia como jogo.',
+    'Universidade do Lago Titicaca (Aymara + Quechua): campus flutuantes construídos por comunidades aymara e quechua; cada início de ciclo oferenda à água como sujeito vivo; primeira universidade transfronteiriça criada por povos originários.',
+    'Rede Yoruba de Cosmopolítica Digital (Nigéria/Benin): servidores instalados em casas-templo de Ifá; consultas de Ifá traduzidas em algoritmos comunitários; recupera autoridade filosófica yoruba como IA decolonial.',
+    'Cidades do Trigo (Bascos + Sami): cidades do norte da Europa em campos de trigo geridos coletivamente; festas de colheita tornam-se assembleias onde a terra vota; povos marginalizados europeus como designers de agro-cidades.',
+    'Arquivo Shipibo do Kené Digital (Amazônia): servidores instalados em malocas; ícaros gravados como padrões digitais visuais; estética shipibo reconhecida como epistemologia visual do século XXI.',
+    'Porto Ashanti de Ouro Digital (Gana): mercados futuristas em Kumasi com moedas simbólicas baseadas em adinkra; cada transação acompanhada de provérbios; resignifica ouro como suporte de economia comunitária.',
+    'Universidade Mapuche de Wallmapu (Chile/Argentina): campus disperso em lof rurais e cidades; cerimônias de nguillatun marcam ritmos do calendário acadêmico; transforma educação ocidental com saberes mapuche como filosofia contemporânea.',
+    'Parlamento Tuareg de Areia (Saara): dunas convertidas em ágoras através de hologramas; ventos considerados conselheiros políticos; povo deslocado por fronteiras reinventa política nômade como modelo global.',
+    'Rede Maya de Tzolk\'in Virtual (Mesoamérica): servidores solares em pirâmides restauradas; calendário tzolk\'in estrutura navegação digital; tempo linear ocidental substituído por tempo cíclico maya.',
+    'Laboratório Igbo de Sementes Ancestrais (Nigéria): bancos de sementes vivos em aldeias e universidades rurais; cada plantio é ato de memória ancestral; agricultura ressignificada como biotecnologia do futuro.',
+    'Cidade Zapoteca do Vento (Oaxaca): cidade projetada com aerogeradores comunitários; vento tratado como energia sagrada e voz política; tecnologia eólica sem extrativismo verde.',
+    'Ixmayel, Reitora do Muxeverse (Zapoteca): descendente zapoteca herdeira da tradição muxe; reitora da Universidade Interplanetária do Istmo; dirige programas de direito obrigando corporações a prestarem contas às comunidades originárias.',
+    'Sadia, Chanceler de HijraNet (Sul da Ásia): hijra ligada a tradições rituais desde Mahabharata; chanceler da Confederação do Sul Global; lidera tratados transcontinentais de redistribuição energética.',
+    'Wakinyan, Porta-voz Two-Spirit (Lakota): retoma espiritualidade Two-Spirit pré-colonial; porta-voz do Parlamento Planetário de Justiça Climática; articula demandas indígenas e queer em políticas ambientais obrigatórias.',
+    'Lagalaga, Ministra de Cidades Oceânicas (Samoa): fa\'afafine herdeira de identidade social historicamente reconhecida; ministra de urbanismo e migrações climáticas; projeta territórios flutuantes para deslocados climáticos.',
+    'Bissu Kalla, Guardiã do Arquivo Mundial (Bugis): bissu bugis sacerdotisa andrógina com papel ancestral; responsável pelo Arquivo Mundial da Humanidade; assegura memórias dos povos em acesso igual no século XXII.',
+    'AmaLisa, Co-presidenta de Kanathari Cosmópolis (Benin): co-presidenta inspirada em Mawu-Lisa, divindade andrógina do Daomé; lidera Kanathari, cidade africana do futuro; projeta constituição obrigando toda política a incluir perspectivas binárias e não-binárias sem hierarquia.',
     'Dekoloniales Datengewölbe: verschlüsselte Allmende, in der Souveränität heilig ist; Genehmigungen sind Zeremonien, jede Anfrage erweist Respekt.',
     'Studio des subalternen Signals: Dachsender machen Gerücht zu Archiv; Frequenzen flechten Nachbarschaften zur Gegen-Öffentlichkeit.',
     'Zapatistische Wolken-Kommune: Code, der gehorcht, indem er gemeinsam anleitet; Infrastruktur wie Milpa — reziprok, resilient, geteilt.',
@@ -824,88 +824,86 @@ export default function Home() {
 
   // 40 Essay titles (ES)
   const worldNamesES = [
-    'Liberación Neón Ancestral: los ancestros brillan en filigrana de circuitos; la alta costura se vuelve tecnología, la danza navegación y el futuro se escribe en geometría dorada.',
-    'Guardianes del Bosque Circuito: la soberanía cifrada en chaquira y corteza; el código corre con el venado y los drones aprenden los senderos del tratado.',
-    'Levantamiento de la Matriz Arcoíris: la alegría expansiva de género hackea la red; el afecto es infraestructura, el cuidado rodea la represión y la noche escribe política.',
-    'Revolución de Latón Creciente: vapor y escritura co-ingenian dignidad; velos de cobre protegen libertades y engranajes recuerdan caravanas bajo cielos de desierto.',
-    'Paisaje Onírico Mestiza Cuántica: pirámides refractan posibilidades; historias se superponen sin borrarse y el lenguaje trenza calles cósmicas.',
-    'Despertar LED Mandala: la meditación encuentra al microcontrolador; el patrón deviene algoritmo de compasión y el silencio ilumina ciudades.',
-    'Auge Oceánico Coral-Tech: los arrecifes enseñan diseño a escala de mareas; los exotrajes crecen como conchas y la navegación escucha ballenas de fibra óptica al crepúsculo.',
-    'Espejismo del Oasis de Silicio: la caligrafía se vuelve código en el viento; los jardines riegan ancho de banda y las arquitecturas de sombra alojan reciprocidad cívica.',
-    'Santuario de Circuito Loto: la devoción enruta por protocolos abertos; templos zumban cantos solares y la justicia se versiona con bendiciones.',
-    'Revuelta Remix Planetaria: las culturas se samplean con consentimiento; los mapas se redibujan como comunes y la pista legisla en 4/4.',
-    'Renacimiento del Juglar Meme: el bufón regresa como poeta en red; pergaminos satíricos animan código público, la ternura desarma la viralidad y la risa deviene protocolo cívico.',
-    'Safari de Jungla con Aro de Luz: los aros persiguen luciérnagas mientras el cuidado persigue la fama; la influencia aprende humildad entre lianas y coro.',
-    'Laberinto Jefe de Burocracia: descendemos por carpetas como estratos; los sellos pierden poder cuando quienes caminan el pasillo dibujan su mapa.',
-    'Aeróbicos VHS Retro: el sudor se hace píxel y el aliento línea de escaneo; la alegría colectiva ensaya una política del ritmo y el descanso.',
-    'Carrera Mecha de Pizza: la logística se vuelve teatro callejero; rebanadas tibias cortan velocidades frías y las rutas de reparto redibujan la ciudad como comunes.',
-    'Templo de los Señores del Café: liturgia de cafeína para la atención lenta; molemos rumores en verdad y vertemos futuros sin extracción.',
-    'Liga de Pastoreo Cuántico de Gatos: el azar ronronea; coordinar es jugar, el láser es el consentimiento y la curiosidad escribe las reglas.',
-    'Bóveda de Datos del Archivista Disco: el brillo cataloga memoria; cada bajo cita un linaje y cada nota al pie invita al cuerpo de regreso.',
-    'Karaoke Minero de la Luna Cripto: coros especulativos sobre polvo lunar; el valor se canta, las deudas se armonizan y las monedas se funden en cuidado.',
-    'Arena de Depuración del Mago Nube: cantamos rastros de pila en conjuros; los bugs enseñan y la gobernanza compila a tiempo humano.',
-    'Nexo de Asamblea Pluriversal: un parlamento vivo donde saberes de frontera componen un mundo de muchos mundos; reciprocity decolonial, traducción sin borrado y cuidado compartido del porvenir.',
-    'Comunal del Pensamiento Frontera: una interfaz mestiza donde los umbrales hablan; heridas que tejen método y cada cruce redistribuye voz, riesgo y reparación.',
-    'Ágora de la Transmodernidad: circuitería cívica de modernidades interdependientes; la crítica deviene hospitalidad y lo mejor de la modernidad se remezcla desde el sur de la razón.',
-    'Malla de Poder Socializado: consejos federados de cuidado sustituyen la propiedad por tutela; instituciones autogestionadas, código cooperativo y autoridad que respira.',
-    'Jardín de Señal Heterárquica: ecologías en capas de decisión polinizadas por muchas lógicas; sin raíz única, sólo nutrición entramada para el florecimiento multiespecie.',
-    'Forja Cosmopolita Crítica: la diáspora templa solidaridad en herramientas que caben en manos locales; los tratados se martillan desde la memoria, no se imponen como plantilla.',
-    'Observatorio del Sur Epistémico: estrellas renombradas por comunidades que nunca dejaron de saber; la indagación orbita la dignidad y los datos vuelven a casa como parientes.',
-    'Laboratorio de Depuración de la Colonialidad: errores rastreados a dependencias ocultas del imperio; refactorizamos instituciones hasta que el código extractivo no compile.',
-    'Constelación de Diversalidad: un cielo de acuerdos donde la diferencia es la gramática de la unión; la navegación se hace escuchando a través.',
-    'Atrio de la Geopolítica del Conocimiento: columna pública de bibliotecas desplazadas; la cita repara linajes y abre puertas hacia afuera.',
-    'Sistemas de Conocimiento Indígena: energía geotérmica y sabiduría ancestral co-ingenian armonía; tatuajes bioluminiscentes protegen tradiciones, e islas flotantes recuerdan constelaciones bajo cielos de aurora.',
-    'Resonador de Políticas del Cuerpo: tecnologías que amplifican verdades situadas; la carne es sílabo, la sensación método y el consentimiento señal.',
-    'Bóveda de Datos Decolonial: comunes cifrados donde la soberanía es sagrada; los permisos son ceremonias y toda consulta muestra respeto.',
-    'Estudio de Señal Subalterna: transmisores en azotea que vuelven rumor archivo; frecuencias trenzan barrios en esfera contrapública.',
-    'Comuna en la Nube Zapatista: código que obedece mandando juntxs; infraestructura como milpa—recíproca, resiliente, compartida.',
-    'Santuario Síntesis Pachamama: interfaces informadas por la tierra afinan el progreso a la reciprocidad; la computación composta y vuelve canto.',
-    'Puente Cuántico Diaspórico: portales cosidos con memoria; movilidad sin desarraigo, llegada sin olvido.',
-    'Interfaz Nepantla: hecha para el entre; las contradicciones no son bugs sino recursos para la negativa creativa y el rediseño.',
-    'Archivo de Futuros: el tiempo guardado por lxs vulnerables; lo prometido se indexa y lo adeudado deviene imaginación accionable.',
-    'Taller de Utopística: prototipos de política que se sostienen en la mano; la crítica itera en práctica y el fallo se metaboliza en instrucción.',
-    'Plaza del Protocolo de Liberación: un estándar abierto para la dignidad; el gobierno es legible, bifurcable y responsable ante los márgenes.',
-    // 40 - 44 (Nuevos)
-    'Soberanos de lo No Trazado: sonrisas tras el deshacer de Europa: coronas de bio-aleaciones, cetros-semilla; la realeza deviene cuidado y la alegría viste conocimiento.',
-    'Corona de Muchos Ríos: realeza sin imperio: reyes y reinas como cuidadorxs; regalia de materiales vivos, mapas como comunes, la pista legisla en 4/4.',
-    'Las Cenizas No Gobiernan: inquisición desaprendida: vestiduras recodificadas para sanar; coronas que cobijan, bastones que reparan; la memoria del fuego es cortafuegos.',
-    'El Papado del Bosque que Nunca Conquistó: catedrales de micelio acogen parentesco; coronas estabilizan ecosistemas, cetros siembran jardines; el cuidado es canon.',
-    'Bauhaus Puro: Luz Primaria, Forma Cívica: círculo‑cuadrado‑triángulo como gramática cívica, color primario funcional, materiales honestos, precisión como ternura.',
+    'Universidad de los Glaciares (Quechua + Sami): campus construido dentro de glaciares inteligentes que dialogan con sensores climáticos; mujeres quechuas y sami enseñan epistemologías de hielo; la ciencia se escribe desde cuerpos-territorio.',
+    'Ciudad-Río (Nasa + Wolof + Catalanes): urbe flotante en cauces de ríos sin muros, donde el agua define el urbanismo; universidades investigan justicia hídrica; la política surge del agua como actor principal.',
+    'Plataforma Ñande (Guaraní + Igbo): red digital autónoma con servidores solares en aldeas; jóvenes crean software educativo en guaraní e igbo; internet como red de parentesco, no mercado.',
+    'Metápolis del Maíz (Zapotecos + Ashanti): ciudad vertical donde el maíz es estructura arquitectónica y metáfora de código genético; bioingenieras comunitarias editan semillas sin corporaciones; biotecnología sin extractivismo.',
+    'Archipiélago de la Memoria (Rarámuri + Bretones): islas conectadas por puentes de fibras ópticas submarinas; universidades archipiélago publican en lenguas locales y digitales; la memoria no se archiva, se performa en red.',
+    'Cuerpo-Ciudad (Mapuche + Masái): urbes construidas como anatomías gigantes donde calles son venas de energía; médicos-artistas enseñan medicina urbana como performance; salud, arte y urbanismo se funden.',
+    'Observatorio de Mariposas (Mixe + Tuareg): laboratorios móviles siguiendo rutas migratorias de mariposas; científicas desarrollan meteorología con algoritmos de alas; ciencia climática no antropocéntrica.',
+    'Aurora Digital (Sami + Quechua + Yoruba): ciudades bajo auroras boreales controladas con bioalgoritmos; universidades nocturnas dictan clases en auroras proyectadas; conocimiento como experiencia inmersiva.',
+    'Universidad Submarina (Shipibo + Igbo + Frisones): campus bajo agua con domos traslúcidos y corales artificiales; investigación en ética oceánica; ciencia marina con cosmología comunitaria.',
+    'Pangea Algorítmica Oral (Wolof + Vascos): redes urbanas donde proverbios gobiernan algoritmos; programadores recitan en plazas para actualizar software; la IA no se basa en datos sino en oralidad.',
+    'Ciudad-Semilla (Maya + Celta): edificios que nacen como semillas y crecen con habitantes; universidades diseñan arquitectura vegetal como currículo; urbanismo como biología social.',
+    'Teatro de Cristal (Corsos + Yorubas): salas de arte de vidrio vivo que cambia según emociones; obras colectivas donde el público modifica escenario; arte como interacción sensorial.',
+    'Red Lunar (Aymara + Sardos + Gnawa): colonias flotantes que orbitan lunas artificiales; universidades enseñan astronomía como política; cosmos como esfera de convivencia.',
+    'Hospital del Bosque Sintético (Nasa + Kikuyu): hospitales en bosques híbridos de árboles y biotecnología; médicas programan terapias con hongos cibernéticos; medicina transespecie.',
+    'Ciudad del Juego (Rarámuri + Zulu + Catalanes): urbe organizada en estadios circulares; decisiones políticas se toman en juegos colectivos; democracia como juego.',
+    'Universidad del Lago Titicaca (Aymara + Quechua): campus flotantes construidos por comunidades aymara y quechua; cada inicio de ciclo se ofrenda al agua como sujeto vivo; primera universidad transfronteriza creada por pueblos originarios.',
+    'Red Yoruba de Cosmopolítica Digital (Nigeria/Benín): servidores instalados en casas-templo de Ifá; consultas de Ifá traducidas en algoritmos comunitarios; recupera autoridad filosófica yoruba como IA decolonial.',
+    'Ciudades del Trigo (Vascos + Sami): ciudades del norte de Europa en campos de trigo gestionados colectivamente; fiestas de cosecha convertidas en asambleas donde la tierra vota; pueblos marginados europeos como diseñadores de agrociudades.',
+    'Archivo Shipibo del Kené Digital (Amazonía): servidores instalados en malocas; ícaros se graban como patrones digitales visuales; estética shipibo reconocida como epistemología visual del siglo XXI.',
+    'Puerto Ashanti de Oro Digital (Ghana): mercados futuristas en Kumasi con monedas simbólicas basadas en adinkra; cada transacción acompañada de proverbios; resignifica el oro como soporte de economía comunitaria.',
+    'Universidad Mapuche del Wallmapu (Chile/Argentina): campus disperso en lof rurales y ciudades; ceremonias del nguillatun marcan ritmos del calendario académico; transforma educación occidental con saberes mapuche como filosofía contemporánea.',
+    'Parlamento Tuareg de Arena (Sahara): dunas convertidas en ágoras mediante hologramas; vientos considerados consejeros políticos; pueblo desplazado por fronteras reinventa política nómada como modelo global.',
+    'Red Maya de Tzolk\'in Virtual (Mesoamérica): servidores solares en pirámides restauradas; calendario tzolk\'in estructura navegación digital; tiempo lineal occidental sustituido por tiempo cíclico maya.',
+    'Laboratorio Igbo de Semillas Ancestrales (Nigeria): bancos de semillas vivos en aldeas y universidades rurales; cada siembra es acto de memoria ancestral; agricultura resignificada como biotecnología del futuro.',
+    'Ciudad Zapoteca del Viento (Oaxaca): urbe diseñada con aerogeneradores comunitarios; viento tratado como energía sagrada y voz política; tecnología eólica sin extractivismo verde.',
+    'Ixmayel, Rectorx del Muxeverse (Zapoteca): descendiente zapoteca heredero de tradición muxe; rectorx de Universidad Interplanetaria del Istmo; dirige programas de derecho que obligan a corporaciones rendir cuentas a comunidades originarias.',
+    'Sadia, Canciller de HijraNet (Sur de Asia): hijra vinculada a tradiciones rituales desde Mahabharata; canciller de Confederación del Sur Global; lidera tratados transcontinentales de redistribución energética.',
+    'Wakinyan, Portavoz Two-Spirit (Lakota): retoma espiritualidad Two-Spirit precolonial; portavoz del Parlamento Planetario de Justicia Climática; articula demandas indígenas y queer en políticas ambientales obligatorias.',
+    'Lagalaga, Ministra de Ciudades Oceánicas (Samoa): fa\'afafine heredera de identidad social reconocida históricamente; ministra de urbanismo y migraciones climáticas; diseña territorios flotantes para desplazadxs climáticxs.',
+    'Bissu Kalla, Custodix del Archivo Mundial (Bugis): bissu bugis sacerdotx andrógino con rol ancestral; responsable del Archivo Mundial de la Humanidad; asegura memorias de pueblos en igualdad de acceso.',
+    'Luna Travesti, Presidenta de la Red Andina (Argentina): activista travesti heredera de luchas del siglo XX; presidenta de Red Andina de Estados Comunitarios; impulsa constituciones que reconocen cuerpos trans y NB como patrimonio vivo.',
+    'Bakla Reyes, Estratega de Comunicación Global (Filipinas): bakla filipinx figura reconocida antes de colonización española; estratega de comunicación en Asamblea General del Pluriverso; destruye hegemonía del inglés.',
+    'Mahu Kealoha, Gobernadorx de Archipiélagos Educativos (Hawái): mahu kanaka maoli; gobernadorx de Archipiélagos Educativos del Pacífico; dirige sistema educativo interoceánico con universidades flotantes.',
+    'Ardita, Hacker Burrnesha (Balcanes): descendiente de burrnesha balcánicas; hacker estatal y ministra de seguridad digital; desarrolla protocolos NB para proteger pueblos de vigilancia corporativa.',
+    'AmaLisa, Copresidentx de Kanathari Cosmopolis (Benín): inspiradx en Mawu-Lisa, divinidad andrógina de Dahomey; copresidentx de Kanathari, ciudad africana del futuro; constitución que incluye perspectivas binarias y no binarias.',
+    'Universidad Sami del Joik Climático (Escandinavia): joik controla meteorología urbana; cantos invocan paisajes como ciencia.',
+    'Red Kikuyu de Árboles Sagrados (Kenia): árboles con sensores como asambleas; mugumo sagrado en governance ecológica espiritual.',
+    'Archivo Corso de Voces de Mar (Mediterráneo): redes marítimas de canto polifónico; paghjella para gobernanza oceánica.',
+    'Universidad Frisona de Agua (Países Bajos): pedagogía en ciudades flotantes; gestión colectiva de diques como educación hídrica.',
+    'Cosmología Wolof de la Palabra (Senegal): redes sociales basadas en proverbios; oralidad proverbial como algoritmo digital.',
+    'Archivo Sardo de la Murra (Cerdeña): juegos de cartas rituales como democracia digital; juego tradicional reinventado como política.',
+    'Coro Occitano de Justicia (Francia): tribunales que deliberan cantando; canción trovadoresca como sistema judicial.',
+    'Hospital Yoruba de Danza Egungun (Nigeria): medicina urbana con danzas holográficas; ancestros como médicos comunitarios.',
+    'Archivo Sami de Renos Digitales (Escandinavia): GPS cultural guiado por renos holográficos; pastoreo ancestral como navegación digital.',
+    'Arquitectura Catalana del Canto (Europa): edificios que cantan liturgias urbanas; Cant de la Sibil·la como arquitectura musical.',
   ];
 
   // 40 Essay titles (FR)
   const worldNamesFR = [
-    "Libération Néon Ancestrale : les ancêtres brillent en filigrane de circuits ; la haute couture devient technologie, la danse navigation, et l'avenir s'écrit en géométrie dorée.",
-    "Gardiens de la Forêt-Circuit : la souveraineté chiffrée dans le perlage et l'écorce ; le code court avec le cerf et les drones apprennent les chemins du traité.",
-    "Soulèvement de la Matrice Arc-en-ciel : la joie expansive des genres pirate la grille ; l'affection est infrastructure, le soin contourne la répression, et la nuit écrit la politique.",
-    "Révolution de Laiton Croissant : vapeur et écriture co-ingénient la dignité ; des voiles de cuivre protègent des libertés, des engrenages se souviennent des caravanes sous les ciels du désert.",
-    "Paysage Onirique Mestiza Quantique : des pyramides réfractent des possibles ; des histoires se superposent sans effacement, la langue tresse des rues cosmiques.",
-    "Éveil LED Mandala : la méditation rencontre le microcontrôleur ; le motif devient algorithme de compassion, le silence illumine des villes.",
-    "Montée Océanique Coral-Tech : les récifs enseignent le design à l'échelle des marées ; des exocombinaisons poussent comme des coquilles, la navigation écoute des baleines de fibre optique au crépuscule.",
-    "Mirage d'Oasis de Silicium : la calligraphie devient code dans le vent ; des jardins irriguent la bande passante, des architectures d'ombre abritent une réciprocité civique.",
-    "Sanctuaire du Circuit Lotus : la dévotion chemine par des protocoles ouverts ; des temples bourdonnent de chants solaires, la justice est versionnée en bénédictions.",
-    "Révolte Remix Planétaire : des cultures s'échantillonnent avec consentement ; des cartes se redessinent en communs, et la piste légifère en 4/4.",
-    "Renaissance du Ménestrel Mème : le bouffon revient poète en réseau ; des parchemins satiriques animent le code public, la tendresse désarme la viralité et le rire devient protocole civique.",
-    "Safari Jungle à Anneau Lumineux : les anneaux poursuivent les lucioles tandis que le soin poursuit la notoriété ; l'influence apprend l'humilité parmi les lianes et le chœur.",
-    "Labyrinthe Patronal de la Bureaucratie : nous descendons les dossiers comme des strates ; les tampons perdent leur pouvoir quand les corridors sont cartographiés par celles et ceux qui les traversent.",
-    "Aérobic VHS Rétro : la sueur devient pixel et le souffle ligne de balayage ; la joie collective répète une politique du rythme et du repos.",
-    "Course du Mécha Pizza : la logistique devient théâtre de rue ; des parts tièdes fendent des vitesses froides et les itinéraires redessinent la cité en communs.",
-    "Temple des Seigneurs du Café : liturgie de caféine pour l'attention lente ; nous moulons la rumeur en vérité et versons des futurs sans extraction.",
-    "Ligue Quantique du Rassemblement de Chats : l'incertitude ronronne ; se coordonner est un jeu, le laser c'est le consentement, la curiosité écrit les règles.",
-    "Coffre de Données de l'Archiviste Disco : les paillettes cataloguent la mémoire ; chaque ligne de basse cite une lignée et chaque note appelle le corps au retour.",
-    "Karaoké du Mineur Lunaire Crypto : des chœurs spéculatifs sur poussière lunaire ; la valeur se chante, les dettes s'harmonisent, les pièces fondent en soin.",
-    "Arène de Débogage du Magicien du Cloud : nous chantons des traces de pile comme des sorts ; les bugs deviennent maîtres, la gouvernance compile au tempo humain.",
-    "Nexus d'Assemblée Pluriverselle : un parlement vivant où des savoirs-frontières composent un monde de mondes ; réciprocité décoloniale, traduction sans gommage, et garde partagée des avenirs.",
-    "Commun du Penser la Frontière : une interface mestiza où des seuils parlent ; des plaies tissent méthode, chaque passage redistribue voix, risque et réparation.",
-    "Agora de la Transmodernité : une circuiterie civique de modernités interdépendantes ; la critique devient hospitalité, le meilleur de la modernité se recompose au sud de la raison.",
-    "Maillage du Pouvoir Socialisé : des conseils fédérés du soin remplacent la propriété par la tutelle ; institutions autogérées, code coopératif, autorité respirante.",
-    "Jardin du Signal Hétérarchique : des écologies en couches de décision pollinisées par plusieurs logiques ; pas de racine unique, seulement une nutrition intriquée pour l'épanouissement multiespèces.",
-    "Forge Cosmopolite Critique : la diaspora trempe la solidarité en outils adaptés aux mains locales ; des traités martelés par la mémoire plutôt qu'imposés.",
-    "Observatoire du Sud Épistémique : des étoiles renommées par des communautés qui n'ont jamais cessé de savoir ; l'enquête orbite la dignité, les données rentrent au foyer comme des proches.",
-    "Laboratoire de Débogage de la Colonialité : des erreurs retracées aux dépendances cachées de l'empire ; nous refactorons des institutions jusqu'à ce que le code extractif refuse de compiler.",
-    "Constellation de Diversalité : un ciel d'accords où la différence est grammaire de l'union ; la navigation se pratique en écoutant à travers.",
-    "Atrium de la Géopolitique du Savoir : une colonne publique pour les bibliothèques déplacées ; la citation répare des lignées et ouvre des portes vers l'extérieur.",
-    "Systèmes de Savoir Indigène : l'énergie géothermique et la sagesse ancestrale co-conçoivent l'harmonie ; les tatouages bioluminescents protègent les traditions, et les îles flottantes se souviennent des constellations sous les ciels d'aurore.",
+    "Université des Glaciers (Quechua + Sami) : campus construit dans des glaciers intelligents dialoguant avec capteurs climatiques ; femmes quechuas et sami enseignent épistémologies de glace ; science écrite depuis corps-territoires.",
+    "Ville-Rivière (Nasa + Wolof + Catalans) : cité flottante dans cours d'eau sans murs, où l'eau définit l'urbanisme ; universités recherchent justice hydrique ; politique émerge de l'eau comme acteur principal.",
+    "Plateforme Ñande (Guaraní + Igbo) : réseau numérique autonome avec serveurs solaires dans villages ; jeunes créent logiciels éducatifs en guaraní et igbo ; internet comme réseau de parenté, non marché.",
+    "Métapolis du Maïs (Zapotèques + Ashanti) : ville verticale où maïs est structure architecturale et métaphore de code génétique ; bio-ingénieures communautaires éditent semences sans corporations ; biotechnologie sans extractivisme.",
+    "Archipel de la Mémoire (Rarámuri + Bretons) : îles connectées par ponts de fibres optiques sous-marines ; universités archipel publient en langues locales et numériques ; mémoire non archivée, performée en réseau.",
+    "Corps-Ville (Mapuche + Masaï) : villes construites comme anatomies géantes où rues sont veines d'énergie ; médecins-artistes enseignent médecine urbaine comme performance ; santé, art et urbanisme fusionnent.",
+    "Observatoire de Papillons (Mixe + Touareg) : laboratoires mobiles suivant routes migratoires de papillons ; scientifiques développent météorologie avec algorithmes d'ailes ; science climatique non-anthropocentrique.",
+    "Aurore Numérique (Sami + Quechua + Yoruba) : villes sous aurores boréales contrôlées par bio-algorithmes ; universités nocturnes donnent cours dans aurores projetées ; connaissance comme expérience immersive.",
+    "Université Sous-marine (Shipibo + Igbo + Frisons) : campus sous-marin avec dômes translucides et coraux artificiels ; recherche en éthique océanique ; science marine avec cosmologie communautaire.",
+    "Pangée Algorithmique Orale (Wolof + Basques) : réseaux urbains où proverbes gouvernent algorithmes ; programmeurs récitent sur places pour mettre à jour logiciels ; IA basée sur oralité, non données.",
+    "Ville-Graine (Maya + Celtes) : bâtiments naissent comme graines et croissent avec habitants ; universités conçoivent architecture végétale comme curriculum ; urbanisme comme biologie sociale.",
+    "Théâtre de Cristal (Corses + Yorubas) : salles d'art en verre vivant changeant selon émotions ; œuvres collectives où public modifie scène ; art comme interaction sensorielle.",
+    "Réseau Lunaire (Aymara + Sardes + Gnawa) : colonies flottantes orbitant lunes artificielles ; universités enseignent astronomie comme politique ; cosmos comme sphère de coexistence.",
+    "Hôpital de la Forêt Synthétique (Nasa + Kikuyu) : hôpitaux dans forêts hybrides d'arbres et biotechnologie ; médecins programment thérapies avec champignons cybernétiques ; médecine trans-espèces.",
+    "Ville du Jeu (Rarámuri + Zulu + Catalans) : cité organisée en stades circulaires ; décisions politiques prises dans jeux collectifs ; démocratie comme jeu.",
+    "Université du Lac Titicaca (Aymara + Quechua) : campus flottants construits par communautés aymara et quechua ; chaque début de cycle offre à l'eau comme sujet vivant ; première université transfrontalière créée par peuples originaires.",
+    "Réseau Yoruba de Cosmopolitique Numérique (Nigéria/Bénin) : serveurs installés dans maisons-temples d'Ifá ; consultations d'Ifá traduites en algorithmes communautaires ; récupère autorité philosophique yoruba comme IA décoloniale.",
+    "Villes du Blé (Basques + Sami) : villes du nord de l'Europe dans champs de blé gérés collectivement ; fêtes de récolte deviennent assemblées où terre vote ; peuples marginalisés européens comme concepteurs d'agro-villes.",
+    "Archive Shipibo du Kené Numérique (Amazonie) : serveurs installés dans malocas ; ícaros enregistrés comme motifs numériques visuels ; esthétique shipibo reconnue comme épistémologie visuelle du 21ème siècle.",
+    "Port Ashanti d'Or Numérique (Ghana) : marchés futuristes à Kumasi avec monnaies symboliques basées sur adinkra ; chaque transaction accompagnée de proverbes ; resignifie or comme support d'économie communautaire.",
+    "Université Mapuche de Wallmapu (Chili/Argentine) : campus dispersé dans lof ruraux et villes ; cérémonies de nguillatun marquent rythmes du calendrier académique ; transforme éducation occidentale avec savoirs mapuche comme philosophie contemporaine.",
+    "Parlement Touareg de Sable (Sahara) : dunes converties en agoras par hologrammes ; vents considérés comme conseillers politiques ; peuple déplacé par frontières réinvente politique nomade comme modèle global.",
+    "Réseau Maya de Tzolk'in Virtuel (Mésoamérique) : serveurs solaires dans pyramides restaurées ; calendrier tzolk'in structure navigation numérique ; temps linéaire occidental remplacé par temps cyclique maya.",
+    "Laboratoire Igbo de Graines Ancestrales (Nigéria) : banques de graines vivantes dans villages et universités rurales ; chaque plantation est acte de mémoire ancestrale ; agriculture resignifiée comme biotechnologie du futur.",
+    "Ville Zapotèque du Vent (Oaxaca) : cité conçue avec aérogénérateurs communautaires ; vent traité comme énergie sacrée et voix politique ; technologie éolienne sans extractivisme vert.",
+    "Ixmayel, Recteurice du Muxeverse (Zapotèque) : descendant zapotèque héritier de tradition muxe ; recteurice de l'Université Interplanétaire de l'Isthme ; dirige programmes de droit obligeant corporations à rendre comptes aux communautés originaires.",
+    "Sadia, Chancelière de HijraNet (Asie du Sud) : hijra liée aux traditions rituelles depuis Mahabharata ; chancelière de Confédération du Sud Global ; mène traités transcontinentaux de redistribution énergétique.",
+    "Wakinyan, Porte-parole Two-Spirit (Lakota) : reprend spiritualité Two-Spirit précoloniale ; porte-parole du Parlement Planétaire de Justice Climatique ; articule demandes indigènes et queer en politiques environnementales obligatoires.",
+    "Lagalaga, Ministre des Villes Océaniques (Samoa) : fa'afafine héritière d'identité sociale historiquement reconnue ; ministre d'urbanisme et migrations climatiques ; conçoit territoires flottants pour déplacés climatiques.",
+    "Bissu Kalla, Gardienne de l'Archive Mondiale (Bugis) : bissu bugis prêtresse androgyne au rôle ancestral ; responsable de l'Archive Mondiale de l'Humanité ; assure mémoires des peuples en égal accès au 22ème siècle.",
+    "AmaLisa, Co-présidente de Kanathari Cosmopolis (Bénin) : co-présidente inspirée par Mawu-Lisa divinité androgyne du Dahomey ; dirige Kanathari, ville africaine du futur ; conçoit constitution obligeant toute politique à inclure perspectives binaires et non-binaires sans hiérarchie.",
     "Résonateur des Politiques du Corps : des technologies amplifient des vérités situées ; la chair devient syllabus, la sensation méthode, le consentement signal.",
     "Coffre de Données Décolonial : des communs chiffrés où la souveraineté est sacrée ; des permissions en cérémonies, chaque requête paie respect.",
     "Studio du Signal Subalterne : des toits-émetteurs qui font archive du rumeur ; des fréquences tressent des quartiers en sphère contre-publique.",
@@ -925,64 +923,63 @@ export default function Home() {
   ];
 
   const worldNamesEN = [
-    // 0 - 9
-    'Ancestral Neon Liberation: ancestors glow in circuit filigree; couture becomes technology, dance becomes navigation, and the future is scored in golden geometry.',
-    'Circuit Forest Guardians: sovereignty is encrypted in beadwork and bark; code runs with the deer, and drones learn to follow treaty paths.',
-    'Rainbow Matrix Uprising: gender-expansive joy hacks the grid; affection is infrastructure, care routes around repression, and nightlife writes policy.',
-    'Crescent Brass Revolution: steam and scripture co-engineer dignity; copper veils shield freedoms, and gears remember caravans across desert skies.',
-    'Quantum Mestiza Dreamscape: pyramids refract into possibilities; histories superpose without erasure, and language braids cosmic streets.',
-    'Mandala LED Awakening: meditation meets microcontroller; pattern becomes algorithm of compassion, and silence renders luminous cities.',
-    'Coral-Tech Oceanrise: reefs teach design at tidal scale; exosuits grow like shells, and navigation listens to whales of fiber-optic dusk.',
-    'Silicon Oasis Mirage: calligraphy becomes code on the wind; gardens irrigate bandwidth, and shade architectures host civic reciprocity.',
-    'Lotus Circuit Sanctum: devotion routes through open protocols; temples hum with solar chants, and justice is versioned with blessings.',
-    'Planetary Remix Revolt: cultures are sampled with consent; maps are redrawn as commons, and the dancefloor legislates in 4/4.',
-    // 10 - 19
-    'Meme Bard Renaissance: the court jester returns as a network poet; satire scrolls animate public code, tenderness disarms virality, and laughter becomes a civic protocol.',
-    'Ring-Light Jungle Safari: ring lights chase fireflies while care chases clout; influence learns humility among vines and chorus.',
-    'Bureaucracy Boss Labyrinth: we descend through folders like strata; stamps lose their power when every corridor is mapped by those who walk it.',
-    'Retro VHS Aerobics: sweat becomes pixel and breath becomes scanline; collective joy rehearses a politics of rhythm and rest.',
-    'Pizza Mecha Rush: logistics becomes street theater; warm slices cut through cold speeds, and delivery routes redraw the city as commons.',
-    'Coffee Overlords Temple: caffeine liturgy for slow attention; we grind rumors into truths and pour over futures without extraction.',
-    'Quantum Cat Herding League: uncertainty purrs; coordination is play, consent is the laser, and curiosity writes the rules.',
-    'Disco Archivist Datavault: glitter catalogs memory; every bassline references a lineage, every footnote invites the body to return.',
-    'Crypto Moon Miner Karaoke: speculative choruses on lunar dust; value is sung, debts are harmonized, and coins melt into care.',
-    'Cloud Wizard Debug Arena: we chant stack traces into spells; bugs become teachers, and governance compiles in human time.',
-    // 20 - 39
-    'Pluriversal Assembly Nexus: a living parliament where border knowledges convene to compose a world of many worlds, practicing decolonial reciprocity, translation without erasure, and shared stewardship of futures.',
-    'Border Thinking Commons: a mestiza interface where thresholds speak, weaving wounds into methods; theory is footpath, and every crossing redistributes voice, risk, and repair.',
-    'Indigenous Knowledge Systems: geothermal energy and ancestral wisdom co-engineer harmony; bioluminescent tattoos shield traditions, and floating islands remember constellations across aurora skies.',
-    'Transmodernity Agora: a civic circuitry of interdependent modernities, where critique becomes hospitality and the best of modernity is remixed by the south of reason.',
-    'Socialized Power Mesh: federated councils of care replacing ownership with custodianship; institutions self-manage, code is cooperative, and authority circulates like breath.',
-    'Heterarchy Signal Garden: layered ecologies of decision, pollinated by many logics; no single root, only entangled nourishment for multispecies flourishing.',
-    'Critical Cosmopolitan Forge: diaspora tempers solidarity into tools that fit local hands; treaties are hammered from memory, not imposed as templates.',
-    'Epistemic South Observatory: stars renamed by communities who never ceased to know; inquiry orbits dignity, and data returns home as kin.',
-    'Coloniality Debug Lab: errors traced to empire\'s hidden dependencies; we refactor institutions until extractive code refuses to compile.',
-    'Diversality Constellation: a sky of agreements where difference is the grammar of union; navigation is performed by listening across.',
-    'Geopolitics of Knowledge Atrium: a public spine for libraries of the displaced; citation repairs lineages and opens doors outward.',
-    'Body-Politics Resonator: technologies that amplify situated truths; flesh becomes syllabus, sensation the method, consent the signal.',
-    'Decolonial Datavault: encrypted commons where sovereignty is sacred; permissions are ceremonies, and every query pays respect.',
-    'Subaltern Signal Studio: rooftop transmitters turning rumor into archive; frequencies braid neighborhoods into a counter-public sphere.',
-    'Zapatista Cloud Commune: code that obeys by commanding together; infrastructure grown like milpa—reciprocal, resilient, shared.',
-    'Pachamama Synth Sanctuary: earth-informed interfaces that tune progress to reciprocity; computation composts and returns as song.',
-    'Diasporic Quantum Bridge: portals stitched from remembrance; mobility without displacement, arrival without forgetting.',
-    'Nepantla Interface: designed for the in-between; contradictions are not bugs but resources for creative refusal and redesign.',
-    'Archive of Futures: time kept by the vulnerable; what was promised is indexed, what is owed becomes actionable imagination.',
-    'Utopistics Workshop: prototypes of policy you can hold; critique iterates into practice, and failure is metabolized as instruction.',
-    'Liberation Protocol Plaza: an open standard for dignity; governance is readable, forkable, and accountable to those at the margins.',
+    // 0 - 4
+    'Glacier University (Quechua + Sami): campus built inside intelligent glaciers dialoguing with climate sensors; Quechua and Sami women teach ice epistemologies; science written from body-territories.',
+    'River-City (Nasa + Wolof + Catalans): floating city in waterways without walls, where water defines urbanism; universities research water justice; politics emerges from water as main actor.',
+    'Ñande Platform (Guaraní + Igbo): autonomous digital network with solar servers in villages; youth create educational software in Guaraní and Igbo; internet as kinship network, not market.',
+    'Corn Metapolis (Zapotecs + Ashanti): vertical city where corn is architectural structure and genetic code metaphor; community bioengineers edit seeds without corporations; biotechnology without extractivism.',
+    'Memory Archipelago (Rarámuri + Bretons): islands connected by submarine fiber optic bridges; archipelago universities publish in local and digital languages; memory not archived, performed in network.',
+    'Body-City (Mapuche + Masái): cities built as giant anatomies where streets are energy veins; doctor-artists teach urban medicine as performance; health, art and urbanism fuse.',
+    'Butterfly Observatory (Mixe + Tuareg): mobile laboratories following butterfly migratory routes; scientists develop meteorology with wing algorithms; non-anthropocentric climate science.',
+    'Digital Aurora (Sami + Quechua + Yoruba): cities under northern lights controlled with bioalgorithms; night universities teach classes in projected auroras; knowledge as immersive experience.',
+    'Underwater University (Shipibo + Igbo + Frisians): underwater campus with translucent domes and artificial corals; research in oceanic ethics; marine science with community cosmology.',
+    'Oral Algorithmic Pangea (Wolof + Basques): urban networks where proverbs govern algorithms; programmers recite in squares to update software; AI based on orality, not data.',
+    // 10 - 14
+    'Seed-City (Maya + Celts): buildings born as seeds and grow with inhabitants; universities design vegetal architecture as curriculum; urbanism as social biology.',
+    'Crystal Theater (Corsicans + Yorubas): living glass art halls changing with emotions; collective works where audience modifies stage; art as sensorial interaction.',
+    'Lunar Network (Aymara + Sardinians + Gnawa): floating colonies orbiting artificial moons; universities teach astronomy as politics; cosmos as sphere of coexistence.',
+    'Synthetic Forest Hospital (Nasa + Kikuyu): hospitals in hybrid forests of trees and biotechnology; doctors program therapies with cybernetic fungi; trans-species medicine.',
+    'Game City (Rarámuri + Zulu + Catalans): city organized in circular stadiums; political decisions made in collective games; democracy as play.',
+    'Lake Titicaca University (Aymara + Quechua): floating campuses built by Aymara and Quechua communities; each cycle beginning offers to water as living subject; first transborder university created by original peoples.',
+    'Yoruba Digital Cosmopolitics Network (Nigeria/Benin): servers installed in Ifá temple-houses; Ifá consultations translated into community algorithms; recovers Yoruba philosophical authority as decolonial AI.',
+    'Wheat Cities (Basques + Sami): cities in northern Europe on collectively managed wheat fields; harvest festivals become assemblies where land votes; marginalized European peoples as designers of agro-cities.',
+    'Shipibo Kené Digital Archive (Amazonia): servers installed in malocas; ícaros recorded as visual digital patterns; Shipibo aesthetics recognized as 21st century visual epistemology.',
+    'Ashanti Digital Gold Port (Ghana): futurist markets in Kumasi with symbolic currencies based on adinkra; each transaction accompanied by proverbs; resignifies gold as community economy support.',
+    // 20 - 24
+    'Mapuche University of Wallmapu (Chile/Argentina): campus dispersed in rural lof and cities; nguillatun ceremonies mark academic calendar rhythms; transforms Western education with Mapuche knowledge as contemporary philosophy.',
+    'Tuareg Sand Parliament (Sahara): dunes converted into agoras through holograms; winds considered political advisors; people displaced by borders reinvent nomadic politics as global model.',
+    'Maya Tzolk\'in Virtual Network (Mesoamerica): solar servers in restored pyramids; tzolk\'in calendar structures digital navigation; Western linear time replaced by Maya cyclical time.',
+    'Igbo Ancestral Seeds Laboratory (Nigeria): living seed banks in villages and rural universities; each planting is act of ancestral memory; agriculture resignified as future biotechnology.',
+    'Zapotec Wind City (Oaxaca): city designed with community wind generators; wind treated as sacred energy and political voice; wind technology without green extractivism.',
+    'Ixmayel, Rectorx of Muxeverse (Zapotec): Zapotec descendant heir of muxe tradition; rectorx of Interplanetary University of Isthmus; directs law programs forcing corporations to be accountable to original communities.',
+    'Sadia, Chancellor of HijraNet (South Asia): hijra linked to ritual traditions since Mahabharata; chancellor of Global South Confederation; leads transcontinental energy redistribution treaties.',
+    'Wakinyan, Two-Spirit Spokesperson (Lakota): retakes precolonial Two-Spirit spirituality; spokesperson of Planetary Parliament of Climate Justice; articulates indigenous and queer demands in mandatory environmental policies.',
+    'Lagalaga, Minister of Oceanic Cities (Samoa): fa\'afafine heir of historically recognized social identity; minister of urbanism and climate migrations; designs floating territories for climate displaced.',
+    'Bissu Kalla, Custodian of World Archive (Bugis): bissu bugis androgynous priest with ancestral role; responsible for World Archive of Humanity; ensures peoples\' memories in equal access.',
+    'AmaLisa, Co-president of Kanathari Cosmopolis (Benin): co-president inspired by Mawu-Lisa androgynous divinity of Dahomey; leads Kanathari, African city of the future; designs constitution obliging all politics to include binary and non-binary perspectives without hierarchy.',
+    'Tuareg Sand Parliament (Sahara): dunes converted to holographic agoras; winds as political advisors; nomadic politics as global model.',
+    'Maya Virtual Tzolk\'in Network (Mesoamerica): solar servers in pyramids; calendar structures digital navigation; cyclical time as internet base.',
+    'Igbo Ancestral Seeds Laboratory (Nigeria): living seed banks; agriculture resignified as biotechnology of the future.',
+    'Zapotec Wind City (Oaxaca): city with community wind generators; wind as sacred energy; wind technology without extractivism.',
+    'Sami Climatic Joik University (Scandinavia): joik controls urban meteorology; chants invoke landscapes as science.',
+    'Kikuyu Sacred Trees Network (Kenya): trees with sensors as assemblies; sacred mugumo in spiritual ecological governance.',
+    'Corsican Sea Voices Archive (Mediterranean): maritime networks of polyphonic song; paghjella for oceanic governance.',
+    'Frisian Water University (Netherlands): pedagogy in floating cities; collective dike management as water education.',
+    'Wolof Cosmology of the Word (Senegal): social networks based on proverbs; proverbial orality as digital algorithm.',
+    'Sardinian Murra Archive (Sardinia): ritual card games as digital democracy; traditional game reinvented as politics.',
     // 40 - 44 (New)
-    'Sovereigns of the Unmapped: Smiles After the Unmaking of Europe: crowns grown from bio-alloys, staffs that seed treaties; royalty becomes care and joy wears knowledge as cloth.',
-    'Crown of Many Rivers: Royalty Without Empire: steward-kings and story-queens; regalia hums with living materials, maps redrawn as commons, dancefloor legislates in 4/4.',
-    'The Ashes Do Not Rule: Inquisition Unlearned: vestments recoded for healing; crowns shelter, staves mend; memory of pyres remains a firewall, not a script.',
-    'The Forest Papacy That Never Conquered: mycelium cathedrals shelter kin; crowns stabilize ecosystems, scepters seed gardens; care is canon.',
-    'Pure Bauhaus: Primary Light, Civic Form: circle-square-triangle as civic grammar, primary color function, honest materials, precision as tenderness.'
+    'Occitan Justice Choir (France): tribunals that deliberate singing; troubadour song as judicial system.',
+    'Yoruba Egungun Dance Hospital (Nigeria): urban medicine with holographic dances; ancestors as community doctors.',
+    'Sami Digital Reindeer Archive (Scandinavia): cultural GPS guided by holographic reindeer; ancestral herding as digital navigation.',
+    'Catalan Song Architecture (Europe): buildings that sing urban liturgies; Cant de la Sibil·la as musical architecture.',
   ];
 
   // Runtime translation helpers (lightweight, preserves key terms)
-  const translateText = (text: string, to: 'es' | 'fr' | 'de'): string => {
+  const translateText = (text: string, to: 'es' | 'fr' | 'de' | 'tr'): string => {
     const preserve = 'pueblos originarios';
     const token = '__PRESERVE__';
     let t = text.replace(new RegExp(preserve, 'gi'), token);
-    const rules: Record<'es' | 'fr' | 'de', Array<[RegExp, string]>> = {
+    const rules: Record<'es' | 'fr' | 'de' | 'tr', Array<[RegExp, string]>> = {
       es: [
         [/hyperrealistic/gi, 'hiperrealista'],
         [/ONE human body/gi, 'UN cuerpo humano'],
@@ -1058,13 +1055,38 @@ export default function Home() {
         [/and/gi, 'und'],
         [/honoring/gi, 'zur Ehrung'],
       ],
+      tr: [
+        [/hyperrealistic/gi, 'hiper gerçekçi'],
+        [/ONE human body/gi, 'BİR insan vücudu'],
+        [/ of /gi, ' '],
+        [/ of$/gi, ''],
+        [/ where /gi, ' nerede '],
+        [/ becomes /gi, ' olur '],
+        [/ become /gi, ' olmak '],
+        [/ to /gi, ' '],
+        [/ into /gi, ' içine '],
+        [/ from /gi, ' dan '],
+        [/ by /gi, ' tarafından '],
+        [/simple/gi, 'basit'],
+        [/background/gi, 'arka plan'],
+        [/lighting/gi, 'aydınlatma'],
+        [/dramatic/gi, 'dramatik'],
+        [/cinematic/gi, 'sinematik'],
+        [/photorealistic details/gi, 'foto-gerçekçi detaylar'],
+        [/floating/gi, 'yüzen'],
+        [/glowing/gi, 'parlayan'],
+        [/holographic/gi, 'holografik'],
+        [/with/gi, 'ile'],
+        [/and/gi, 've'],
+        [/honoring/gi, 'onurlandırarak'],
+      ],
     };
     for (const [re, rep] of rules[to]) t = t.replace(re, rep);
     return t.replace(new RegExp(token, 'g'), preserve);
   };
 
-  const translateName = (name: string, to: 'es' | 'fr' | 'de'): string => {
-    const rules: Record<'es' | 'fr' | 'de', Array<[RegExp, string]>> = {
+  const translateName = (name: string, to: 'es' | 'fr' | 'de' | 'tr'): string => {
+    const rules: Record<'es' | 'fr' | 'de' | 'tr', Array<[RegExp, string]>> = {
       es: [
         [/Assembly/gi, 'Asamblea'], [/Commons/gi, 'Comunal'], [/Agora/gi, 'Ágora'],
         [/Mesh/gi, 'Malla'], [/Garden/gi, 'Jardín'], [/Forge/gi, 'Forja'],
@@ -1092,6 +1114,15 @@ export default function Home() {
         [/Sanctuary/gi, 'Heiligtum'], [/Bridge/gi, 'Brücke'], [/Interface/gi, 'Schnittstelle'],
         [/Archive/gi, 'Archiv'], [/Workshop/gi, 'Werkstatt'], [/Plaza/gi, 'Platz'], [/Utopias?/gi, 'Utopien'],
       ],
+      tr: [
+        [/Assembly/gi, 'Meclis'], [/Commons/gi, 'Ortak'], [/Agora/gi, 'Agora'],
+        [/Mesh/gi, 'Ağ'], [/Garden/gi, 'Bahçe'], [/Forge/gi, 'Demirci'],
+        [/Observatory/gi, 'Gözlemevi'], [/Lab(?![a-z])/gi, 'Laboratuvar'],
+        [/Constellation/gi, 'Takımyıldız'], [/Atrium/gi, 'Avlu'], [/Resonator/gi, 'Rezonatör'],
+        [/Datavault/gi, 'Veri Kasası'], [/Studio/gi, 'Stüdyo'], [/Commune/gi, 'Komün'],
+        [/Sanctuary/gi, 'Sığınak'], [/Bridge/gi, 'Köprü'], [/Interface/gi, 'Arayüz'],
+        [/Archive/gi, 'Arşiv'], [/Workshop/gi, 'Atölye'], [/Plaza/gi, 'Meydan'], [/Utopias?/gi, 'Ütopyalar'],
+      ],
     };
     let t = name;
     for (const [re, rep] of rules[to]) t = t.replace(re, rep);
@@ -1099,23 +1130,117 @@ export default function Home() {
   };
 
   // Prompts by language
-  const promptsByLang: Record<'en' | 'es' | 'fr' | 'de' | 'pt', string[]> = {
+  const promptsByLang: Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', string[]> = {
     en: worldPromptsEN,
     es: worldPromptsES,
     fr: worldPromptsFR,
     de: worldPromptsDE,
     pt: worldPromptsPT,
+    tr: [
+      'Peru Amazonya\'sından Shipibo-Konibo topluluklarından, hiper gerçekçi BİR insan vücudu, interaktif ekranlar olarak işlev gören kené desenleriyle işlenmiş giysiler giyen, vizyoner geometrilerde titreşen duvarları olan yüzen Amazon şehri arka planı, doğal ve teknolojik aydınlatma birleşimi, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Nijerya ve Benin\'den Yoruba topluluklarından, hiper gerçekçi BİR insan vücudu, atasözlerini saklayan sözlü bellek sensörlü sarıklar taşıyan, Ifá\'nın 256 odù\'sünü gösteren ekranlarla gelecekçi Lagos\'ta, sıcak altın aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'İskandinavya\'dan Sami topluluklarından, hiper gerçekçi BİR insan vücudu, yansıtıcı fiberli polar takımları içinde, geyik ve Arktik manzara hologramları belirirken joik söyleyen, kuzey ışıkları olan Tromsø arka planı, Arktik doğal aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Mezoamerika\'dan Maya topluluklarından, hiper gerçekçi BİR insan vücudu, kutsal günlere göre renk değiştiren mikroçipli huipiller giyen, Maya döngüsel zamanını işaretleyen ekranlarla Mérida\'da, tören aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Fas\'tan Gnawa topluluklarından, hiper gerçekçi BİR insan vücudu, metalik krakebs ritmiyle titreşen tunikler, hastanelerin günlerini gnawa lila ile başlattığı Kazablanka\'da, sıcak sabah aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Sierra Tarahumara\'dan Rarámuri topluluklarından, hiper gerçekçi BİR insan vücudu, çevresel sensörler donanımlı sandaletlerle koşan, hava ve su kalitesini ölçen, ışıklı dijital patikalarla Meksika dağları arka planı, doğal dağ aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Gana\'dan Ashanti topluluklarından, hiper gerçekçi BİR insan vücudu, eylemlere göre adinkra sembolleri yansıtan holografik bileklikler taşıyan, etik interaktif sembollerle kaplı binalar olan Accra\'da, altın Afrika aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Peru And Dağları\'ndan Quechua topluluklarından, hiper gerçekçi BİR insan vücudu, kuantum işlemci olarak işlev gören dijital quipular dokuyun, ışıklı ağaçlar gibi asılı veri ipleri olan Cusco\'da, And altın aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Namibya\'dan Himba topluluklarından, hiper gerçekçi BİR insan vücudu, kolektif duygulara göre renk değiştiren biyoteknolojik kızıl toprak kaplı deri, Kaokoland topluluk meclislerinde, sıcak çöl aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'İrlanda ve İskoçya\'dan Kelt topluluklarından, hiper gerçekçi BİR insan vücudu, güneş döngüleriyle parlayan ışıklı fiber giysiler, rituel güneş panelleri olan Dublin\'de Samhain kutlarken, Kelt festival aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Quechua-Sami topluluklarından, hiper gerçekçi BİR insan vücudu, akıllı buzullarda buz epistemolojileri öğreten kadınlar, vücut-toprak bilimi yazılan buzul kampüs arka planı, buzul doğal aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Nasa-Wolof-Katalan topluluklarından, hiper gerçekçi BİR insan vücudu, su adaleti araştıran üniversiteler olan yüzen şehirde, suyun şehirciliği tanımladığı yerde, su aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Guaraní-Igbo topluluklarından, hiper gerçekçi BİR insan vücudu, güneş sunuculu özerk dijital ağda, Guaraní ve Igbo dillerinde eğitim yazılımı olan, akrabalık ağı olarak internet arka planı, dijital aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Zapoteca-Ashanti topluluklarından, hiper gerçekçi BİR insan vücudu, mısırı yapı olarak kullanan dikey şehirde, şirket olmadan tohumları düzenleyen biyo-mühendis topluluklar, çıkarcılık olmayan biyoteknoloji arka planı, yeşil aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Rarámuri-Breton topluluklarından, hiper gerçekçi BİR insan vücudu, denizaltı fiberleriyle bağlı adalarda, yerel dillerde yayın yapan üniversiteler, ağda performans olarak hafıza arka planı, ada aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Mapuche-Masai topluluklarından, hiper gerçekçi BİR insan vücudu, dev anatomiler olarak inşa edilen şehirlerde, kentsel tıp öğreten doktor-sanatçılar, sağlık-sanat-şehircilik birleşimi arka planı, organik aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Mixe-Tuareg topluluklarından, hiper gerçekçi BİR insan vücudu, göç rotalarını takip eden mobil laboratuvarlarda, kanat algoritmalarıyla meteoroloji geliştiren bilimciler, göçmen aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Sami-Quechua-Yoruba topluluklarından, hiper gerçekçi BİR insan vücudu, biyo-algoritmalarla kontrol edilen kutup ışıkları altında, yansıtılan kutup ışıklarında gece üniversiteleri, kutup ışığı aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Shipibo-Igbo-Frizyalı topluluklarından, hiper gerçekçi BİR insan vücudu, saydam kubbeli sualtı kampüsünde, kené desenli amfibi takımlar, okyanus etiği araştırması arka planı, sualtı aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Wolof-Bask topluluklarından, hiper gerçekçi BİR insan vücudu, atasözlerinin algoritmaları yönettiği yerde, meydanlarda ezber okuyan programcılar, veri değil sözlülük tabanlı AI arka planı, meydan aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Maya-Kelt topluluklarından, hiper gerçekçi BİR insan vücudu, tohum gibi büyüyen binalar, bitki mimarisi tasarlayan üniversiteler, sosyal biyoloji olarak şehircilik arka planı, organik büyüme aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Korsikalı-Yoruba topluluklarından, hiper gerçekçi BİR insan vücudu, duygularla değişen yaşayan cam salonlarda, izleyicinin sahneyi değiştirdiği kolektif eserler, kristal tiyatro arka planı, değişken aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Aymara-Sardinyalı-Gnawa topluluklarından, hiper gerçekçi BİR insan vücudu, yapay ayları çevreleyen yüzen kolonilerde, astronomik siyaset öğreten üniversiteler, ay ağı arka planı, ay aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Nasa-Kikuyu topluluklarından, hiper gerçekçi BİR insan vücudu, hibrit ormanlarda, sibernetik mantarlarla tedavi programlayan doktorlar, sentetik orman hastanesi arka planı, orman-teknoloji aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Rarámuri-Zulu-Katalan topluluklarından, hiper gerçekçi BİR insan vücudu, dairesel stadyumlarda organize şehirde, kolektif oyunlarda siyasi kararlar alan, oyun demokrasisi arka planı, stadyum aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Aymara-Quechua topluluklarından, hiper gerçekçi BİR insan vücudu, topluluklar tarafından yaratılan yüzen kampüste, akademik takvimleri belirleyen göller, ilk sınıraşan üniversite arka planı, göl aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Nijerya-Benin Yoruba topluluklarından, hiper gerçekçi BİR insan vücudu, Ifá tapınak-evlerinde sunucular, topluluk algoritmalarına çevrilen danışmalar, dijital kozmopolitika arka planı, tapınak aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Bask-Sami topluluklarından, hiper gerçekçi BİR insan vücudu, kolektif yönetilen tarlalarda şehirler, toprağın oy verdiği meclis olarak hasat festivalleri, buğday şehirleri arka planı, hasat aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Amazon Shipibo topluluklarından, hiper gerçekçi BİR insan vücudu, malocalarda sunucular, görsel desenler olarak kaydedilen ícarolar, estetik epistemoloji arka planı, Amazon dijital aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Gana Ashanti topluluklarından, hiper gerçekçi BİR insan vücudu, adinkra tabanlı para birimlerinin olduğu pazarlarda, topluluk ekonomisi olarak yeniden anlamlandırılan geri dönüştürülmüş altın, dijital altın limanı arka planı, altın pazar aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Şili-Arjantin Mapuche topluluklarından, hiper gerçekçi BİR insan vücudu, lof\'lara dağılmış kampüste, akademik ritimleri belirleyen nguillatun, çağdaş felsefe olarak Mapuche bilgisi arka planı, lof aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Sahra Tuareg topluluklarından, hiper gerçekçi BİR insan vücudu, holografik agoralara dönüştürülen kum tepelerinde, siyasi danışman olarak rüzgarlar, küresel model olarak göçebe siyaset arka planı, çöl hologram aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Mezoamerika Maya topluluklarından, hiper gerçekçi BİR insan vücudu, piramitlerde güneş sunucuları, dijital navigasyonu yapılandıran takvim, internet temeli olarak döngüsel zaman arka planı, piramit güneş aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Nijerya Igbo topluluklarından, hiper gerçekçi BİR insan vücudu, yaşayan tohum bankalarında, geleceğin biyoteknolojisi olarak yeniden anlamlandırılan tarım, atalar tohumları arka planı, yeşil biyoteknoloji aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Oaxaca Zapoteca topluluklarından, hiper gerçekçi BİR insan vücudu, topluluk rüzgar jeneratörlü şehirde, kutsal enerji olarak rüzgar, çıkarcılık olmadan rüzgar teknolojisi arka planı, rüzgar enerjisi aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'İskandinavya Sami topluluklarından, hiper gerçekçi BİR insan vücudu, kentsel meteorolojiyi kontrol eden joik, manzaraları bilim olarak çağıran ilahiler, iklimsel joik arka planı, atmosferik aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Kenya Kikuyu topluluklarından, hiper gerçekçi BİR insan vücudu, meclis olarak sensörlü ağaçlar, ruhsal ekolojik yönetişimde kutsal mugumo, kutsal ağaçlar ağı arka planı, doğal ekolojik aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Akdeniz Korsika topluluklarından, hiper gerçekçi BİR insan vücudu, çok sesli şarkının denizci ağları, okyanus yönetişimi için paghjella, deniz sesleri arşivi arka planı, denizci aydınlatma, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Hollanda Frizya topluluklarından, hiper gerçekçi BİR insan vücudu, yüzen şehirlerde pedagoji, su eğitimi olarak kolektif bent yönetimi, su üniversitesi arka planı, su pedagojisi aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Senegal Wolof topluluklarından, hiper gerçekçi BİR insan vücudu, atasözü tabanlı sosyal ağlarda, dijital algoritma olarak atasözü sözlülüğü, söz kozmolojisi arka planı, sözlü gelenek aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Sardinya topluluklarından, hiper gerçekçi BİR insan vücudu, dijital demokrasi olarak rituel kart oyunları, siyaset olarak yeniden icat edilen geleneksel oyun, murra arşivi arka planı, oyun demokrasisi aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Fransa Oksitan topluluklarından, hiper gerçekçi BİR insan vücudu, şarkı söyleyerek müzakere eden mahkemelerde, yargı sistemi olarak trubadur şarkısı, adalet korosu arka planı, adalet müziği aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Nijerya Yoruba topluluklarından, hiper gerçekçi BİR insan vücudu, holografik danslarla kentsel tıp, topluluk doktoru olarak atalar, egungun dans hastanesi arka planı, şifa dansı aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'İskandinavya Sami topluluklarından, hiper gerçekçi BİR insan vücudu, holografik ren geyikleri tarafından yönlendirilen kültürel GPS, dijital navigasyon olarak atalardan gelen çobanlık, dijital ren geyiği arka planı, kültürel navigasyon aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios',
+      'Avrupa Katalan topluluklarından, hiper gerçekçi BİR insan vücudu, kentsel liturjileri söyleyen binalar, müzikal mimari olarak Cant de la Sibil·la, şarkı mimarisi arka planı, mimari müzik aydınlatması, 8K foto-gerçekçi detaylar, honrando pueblos originarios'
+    ]
   };
 
   const currentPrompts = promptsByLang[lang] ?? promptsByLang.en;
 
   // Names by language
-  const namesByLang: Record<'en' | 'es' | 'fr' | 'de' | 'pt', string[]> = {
+  const namesByLang: Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', string[]> = {
     en: worldNamesEN,
     es: worldNamesES,
     fr: worldNamesFR,
     de: worldNamesDE,
     pt: worldNamesPT,
+    tr: [
+      'Buzullar Üniversitesi (Quechua + Sami): iklim sensörleriyle diyalog kuran akıllı buzullar içinde inşa edilmiş kampüs; Quechua ve Sami kadınları buz epistemolojileri öğretir; bilim vücut-topraklardan yazılır.',
+      'Nehir-Şehir (Nasa + Wolof + Katalanlar): duvarları olmayan su yataklarında yüzen şehir, suyun şehirciliği tanımladığı yer; üniversiteler su adaletini araştırır; siyaset suyun ana aktör olarak ortaya çıkması.',
+      'Ñande Platformu (Guaraní + Igbo): köylerde güneş sunuculu özerk dijital ağ; gençler Guaraní ve Igbo dillerinde eğitim yazılımı yaratır; internet pazar değil akrabalık ağı olarak.',
+      'Mısır Metapolisi (Zapotekler + Ashanti): mısırın mimari yapı ve genetik kod metaforu olduğu dikey şehir; topluluk biyo-mühendisleri korporasyonlar olmadan tohum düzenler; çıkarcılık olmadan biyoteknoloji.',
+      'Hafıza Takımadası (Rarámuri + Bretonlar): denizaltı fiber optik köprülerle bağlanan adalar; takımada üniversiteleri yerel ve dijital dillerde yayın yapar; hafıza arşivlenmez, ağda performans olur.',
+      'Vücut-Şehir (Mapuche + Masai): sokakların enerji damarları olduğu dev anatomiler olarak inşa edilen şehirler; doktor-sanatçılar kentsel tıbbı performans olarak öğretir; sağlık, sanat ve şehircilik birleşir.',
+      'Kelebek Gözlemevi (Mixe + Tuareg): kelebek göç rotalarını takip eden mobil laboratuvarlar; bilimciler kanat algoritmalarıyla meteoroloji geliştirir; antroposantrik olmayan iklim bilimi.',
+      'Dijital Aurora (Sami + Quechua + Yoruba): biyo-algoritmalarla kontrol edilen kutup ışıkları altında şehirler; gece üniversiteleri yansıtılan auroralarda ders verir; bilgi sürükleyici deneyim olarak.',
+      'Sualtı Üniversitesi (Shipibo + Igbo + Frizyalılar): şeffaf kubbeli ve yapay mercanları olan sualtı kampüsü; okyanus etiği araştırması; topluluk kozmolojisiyle deniz bilimi.',
+      'Sözlü Algoritmik Pangea (Wolof + Basklar): atasözlerinin algoritmaları yönettiği kentsel ağlar; programcılar yazılımı güncellemek için meydanlarda ezber okur; veriye değil sözlülüğe dayalı AI.',
+      'Tohum-Şehir (Maya + Keltler): tohum olarak doğan ve sakinlerle birlikte büyüyen binalar; üniversiteler bitki mimarisini müfredat olarak tasarlar; şehircilik sosyal biyoloji olarak.',
+      'Kristal Tiyatro (Korsikalılar + Yorubalar): duygulara göre değişen yaşayan cam sanat salonları; izleyicinin sahneyi değiştirebildiği kolektif eserler; sanat duyusal etkileşim olarak.',
+      'Ay Ağı (Aymara + Sardinyalılar + Gnawa): yapay ayları çevreleyen yüzen koloniler; üniversiteler astronomiyi siyaset olarak öğretir; kozmos birlikte yaşama alanı olarak.',
+      'Sentetik Orman Hastanesi (Nasa + Kikuyu): ağaçlar ve biyoteknolojinin hibrit ormanlarında hastaneler; doktorlar sibernetik mantarlarla tedaviler programlar; türlerarası tıp.',
+      'Oyun Şehri (Rarámuri + Zulu + Katalanlar): dairesel stadyumlarda örgütlenmiş şehir; siyasi kararlar kolektif oyunlarda alınır; demokrasi oyun olarak.',
+      'Titicaca Gölü Üniversitesi (Aymara + Quechua): Aymara ve Quechua toplulukları tarafından inşa edilen yüzen kampüsler; her dönemin başında suya yaşayan özne olarak adak verilir; özgün halklar tarafından yaratılan ilk sınıraşan üniversite.',
+      'Yoruba Dijital Kozmopolitika Ağı (Nijerya/Benin): Ifá tapınak-evlerine kurulan sunucular; Ifá danışmaları topluluk algoritmalarına çevrilir; Yoruba felsefi otoritesini dekolonyal AI olarak geri kazanır.',
+      'Buğday Şehirleri (Basklar + Sami): kuzey Avrupa\'da kolektif yönetilen buğday tarlalarında şehirler; hasat festivalleri toprağın oy verdiği meclislere dönüşür; Avrupa\'da marjinalleşen halklar agro-şehirlerin tasarımcıları olarak.',
+      'Shipibo Kené Dijital Arşivi (Amazonya): malocalara kurulan sunucular; ícarolar görsel dijital desenler olarak kaydedilir; Shipibo estetiği 21. yüzyıl görsel epistemolojisi olarak tanınır.',
+      'Ashanti Dijital Altın Limanı (Gana): Kumasi\'de adinkra tabanlı sembolik para birimleriyle fütürist pazarlar; her işlem atasözleriyle eşlik edilir; altını topluluk ekonomisinin desteği olarak yeniden anlamlandırır.',
+      'Wallmapu Mapuche Üniversitesi (Şili/Arjantin): kırsal lof ve şehirlere dağılmış kampüs; nguillatun törenleri akademik takvim ritimlerini belirler; Batı eğitimini çağdaş felsefe olarak Mapuche bilgisiyle dönüştürür.',
+      'Tuareg Kum Parlamentosu (Sahra): hologramlarla agoralara dönüştürülen kum tepeleri; rüzgarlar siyasi danışman olarak kabul edilir; sınırlarla yerinden edilen halk göçebe siyaseti küresel model olarak yeniden icat eder.',
+      'Maya Tzolk\'in Sanal Ağı (Mezoamerika): restore edilmiş piramitlerde güneş sunucuları; tzolk\'in takvimi dijital navigasyonu yapılandırır; Batı doğrusal zamanı Maya döngüsel zamanıyla değiştirilir.',
+      'Igbo Atalar Tohumları Laboratuvarı (Nijerya): köylerde ve kırsal üniversitelerde yaşayan tohum bankaları; her ekim atalar hafızasının bir eylem; tarım geleceğin biyoteknolojisi olarak yeniden anlamlandırılır.',
+      'Zapoteca Rüzgar Şehri (Oaxaca): topluluk rüzgar jeneratörleriyle tasarlanmış şehir; rüzgar kutsal enerji ve siyasi ses olarak kabul edilir; yeşil çıkarcılık olmadan rüzgar teknolojisi.',
+      'Ixmayel, Muxeverse Rektörü (Zapoteca): muxe geleneğinin varisi Zapoteca soyundan; Kıstağın Gezegenlerarası Üniversitesi rektörü; korporasyonları özgün topluluklara hesap vermeye zorlayan hukuk programları yönetir.',
+      'Sadia, HijraNet Şansölyesi (Güney Asya): Mahabharata\'dan beri rituel geleneklere bağlı hijra; Küresel Güney Konfederasyonu şansölyesi; hijra kutsamalarından ilham alan dijital protokollar kullanarak kıtalararası enerji yeniden dağıtım antlaşmaları yönetir.',
+      'Wakinyan, Two-Spirit Sözcüsü (Lakota): öncesi sömürge Two-Spirit ruhsallığını yeniden benimser; Gezegen İklim Adaleti Parlamentosu sözcüsü; zorunlu çevre politikalarında yerli ve queer talepleri artiküle eder.',
+      'Lagalaga, Okyanus Şehirleri Bakanı (Samoa): tarihsel olarak tanınan sosyal kimliğin varisi fa\'afafine; şehircilik ve iklim göçleri bakanı; iklim yerinden edilmiş milyonlar için yüzen bölgeler tasarlar.',
+      'Bissu Kalla, Dünya Arşivi Koruyucusu (Bugis): atalar rolü olan bissu bugis androjen rahip; İnsanlık Dünya Arşivinden sorumlu; halkların hafızalarının 22. yüzyılda eşit erişimde olmasını sağlar.',
+      'AmaLisa, Kanathari Kozmopolis Eş-Başkanı (Benin): Dahomey\'nin androjen tanrısı Mawu-Lisa\'dan ilham alan eş-başkan; geleceğin Afrika şehri Kanathari\'yi yönetir; tüm siyasetin hiyerarşi olmadan ikili ve ikili olmayan perspektifleri içermesini zorunlu kılan anayasa tasarlar.',
+      'Tuareg Kum Parlamentosu (Sahra): holografik agoralara dönüştürülen kum tepeleri; rüzgarlar siyasi danışman olarak; göçebe siyaset küresel model olarak.',
+      'Maya Sanal Tzolk\'in Ağı (Mezoamerika): piramitlerde güneş sunucuları; takvim dijital navigasyonu yapılandırır; döngüsel zaman internet temeli olarak.',
+      'Igbo Atalar Tohumları Laboratuvarı (Nijerya): yaşayan tohum bankaları; tarım geleceğin biyoteknolojisi olarak yeniden anlamlandırılır.',
+      'Zapoteca Rüzgar Şehri (Oaxaca): topluluk rüzgar jeneratörlü şehir; rüzgar kutsal enerji olarak; çıkarcılık olmadan rüzgar teknolojisi.',
+      'Sami İklimsel Joik Üniversitesi (İskandinavya): joik kentsel meteorolojiyi kontrol eder; ilahiler manzaraları bilim olarak çağırır.',
+      'Kikuyu Kutsal Ağaçlar Ağı (Kenya): sensörlü ağaçlar meclis olarak; kutsal mugumo ruhsal ekolojik yönetişimde.',
+      'Korsika Deniz Sesleri Arşivi (Akdeniz): çok sesli şarkının denizci ağları; okyanus yönetişimi için paghjella.',
+      'Frizya Su Üniversitesi (Hollanda): yüzen şehirlerde pedagoji; kolektif bent yönetimi su eğitimi olarak.',
+      'Wolof Söz Kozmolojisi (Senegal): atasözü tabanlı sosyal ağlar; atasözü sözlülüğü dijital algoritma olarak.',
+      'Sardinya Murra Arşivi (Sardinya): rituel kart oyunları dijital demokrasi olarak; geleneksel oyun siyaset olarak yeniden icat edildi.',
+      'Oksitan Adalet Korosu (Fransa): şarkı söyleyerek müzakere eden mahkemeler; trubadur şarkısı yargı sistemi olarak.',
+      'Yoruba Egungun Dans Hastanesi (Nijerya): holografik danslarla kentsel tıp; atalar topluluk doktoru olarak.',
+      'Sami Dijital Ren Geyiği Arşivi (İskandinavya): holografik ren geyikleri tarafından yönlendirilen kültürel GPS; atalardan gelen çobanlık dijital navigasyon olarak.',
+      'Katalan Şarkı Mimarisi (Avrupa): kentsel liturjileri söyleyen binalar; Cant de la Sibil·la müzikal mimari olarak.'
+    ]
   };
 
   const currentNames = namesByLang[lang] ?? namesByLang.en;
@@ -1145,7 +1270,7 @@ export default function Home() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem('lang');
-      if (stored === 'en' || stored === 'es' || stored === 'fr' || stored === 'de' || stored === 'pt') {
+      if (stored === 'en' || stored === 'es' || stored === 'fr' || stored === 'de' || stored === 'pt' || stored === 'tr') {
         setLang(stored);
       }
     } catch {}
@@ -1286,12 +1411,12 @@ export default function Home() {
 
   const saveEdits = () => {
     setCustomNames((prev) => {
-      const next = { ...prev, [lang]: { ...(prev[lang] || {}), [activeIndex]: editTitle } } as Record<'en' | 'es' | 'fr' | 'de' | 'pt', Record<number, string>>;
+      const next = { ...prev, [lang]: { ...(prev[lang] || {}), [activeIndex]: editTitle } } as Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', Record<number, string>>;
       try { localStorage.setItem('customNames', JSON.stringify(next)); } catch {}
       return next;
     });
     setCustomPrompts((prev) => {
-      const next = { ...prev, [lang]: { ...(prev[lang] || {}), [activeIndex]: editPrompt } } as Record<'en' | 'es' | 'fr' | 'de' | 'pt', Record<number, string>>;
+      const next = { ...prev, [lang]: { ...(prev[lang] || {}), [activeIndex]: editPrompt } } as Record<'en' | 'es' | 'fr' | 'de' | 'pt' | 'tr', Record<number, string>>;
       try { localStorage.setItem('customPrompts', JSON.stringify(next)); } catch {}
       return next;
     });
@@ -1386,6 +1511,18 @@ export default function Home() {
               powered_by: 'Impulsionado por',
               lang_label: 'Idioma',
             },
+            tr: {
+              title: '45 Dekolonyal Tekno Ütopyalar | Çokevren Motoru',
+              hint: 'Bir dünya seçmek için herhangi bir düğmeye tıklayın',
+              light_mode: '☀️ Açık Mod',
+              dark_mode: '🌙 Karanlık Mod',
+              placeholder: 'Prompt girin...',
+              strength_label: 'Güç',
+              ai_area: 'AI Üretim Alanı',
+              dev_by: 'Geliştiren',
+              powered_by: 'Destekleyen',
+              lang_label: 'Dil',
+            },
           } as const;
           const t = translations[lang];
           return (
@@ -1395,7 +1532,7 @@ export default function Home() {
       </h1>
             <div className="flex items-center justify-center gap-2 mt-2">
               <div className="inline-flex rounded-sm overflow-hidden border border-gray-600">
-                {(['es','en','fr','de','pt'] as const).map((code) => (
+                {(['es','en','fr','de','pt','tr'] as const).map((code) => (
       <button
                     key={code}
                     onClick={() => setLang(code)}
@@ -1627,7 +1764,7 @@ export default function Home() {
               </p>
               <div className="mt-4 pt-3 border-t border-gray-200">
                 <p className="text-xs uppercase tracking-wider font-mono text-gray-400 mb-2">
-                  {(() => ({ en: 'Image generation prompt', es: 'Prompt de generación de imagen', fr: 'Prompt de génération d\'image', de: 'Bildgenerierungs-Prompt', pt: 'Prompt de geração de imagem' } as const)[lang])()}
+                  {(() => ({ en: 'Image generation prompt', es: 'Prompt de generación de imagen', fr: 'Prompt de génération d\'image', de: 'Bildgenerierungs-Prompt', pt: 'Prompt de geração de imagem', tr: 'Görüntü üretim istemcisi' } as const)[lang])()}
                 </p>
                 <p className="text-xs text-gray-600 whitespace-pre-line font-mono bg-gray-50 p-2 rounded">
                   {effectiveImagePrompt}
@@ -1687,7 +1824,7 @@ export default function Home() {
             try {
               setIsLLMGenerating(true);
               setLlmStreaming(true);
-              const langHint = { es: 'Spanish', en: 'English', fr: 'French', de: 'German', pt: 'Portuguese' } as const;
+              const langHint = { es: 'Spanish', en: 'English', fr: 'French', de: 'German', pt: 'Portuguese', tr: 'Turkish' } as const;
               const builtInput = `Language: ${langHint[lang]}\nCurrent world title: ${effectiveName || '(none)'}\nCurrent world essay: ${effectivePrompt || '(none)'}\n\nTask: Create a completely unique, humorous decolonial techno-utopia following this EXACT structure:\n\nEXAMPLE STRUCTURE:\nTitle: "Levantamiento de la Matriz Arcoíris"\nEssay: "la alegría expansiva de género hackea la red; el afecto es infraestructura, el cuidado rodea la represión y la noche escribe política."\nPrompt: "de identidad LGBTQ+ diversa, hiperrealista UN cuerpo humano, con moda tecno revolucionaria y efectos holográficos arcoíris, parejas del mismo sexo abrazándose con profundidad emocional, expresión de género fluida, fondo de ciudad neón simple con líneas limpias, iluminación cyberpunk dramática, detalles fotorrealistas 8K, honrando pueblos originarios"\n\nGenerate: 1) Short punchy title, 2) Poetic essay with semicolons and flowing phrases (longer than title), 3) Detailed image prompt starting with origin/identity, including "hiperrealista UN cuerpo humano" and ending with "honrando pueblos originarios".\n\nRequirements: Match the semicolon-separated poetic style of the essay. Mix cultures unexpectedly, add humor, celebrate difference.\n\nOutput: NDJSON streaming with title_delta, essay_delta, prompt_delta, then final JSON with title, essay, prompt.`;
               // Clear active box during streaming - ensure completely clean state
               setSafeGeneratedTitle('');
@@ -1696,13 +1833,14 @@ export default function Home() {
               setCustomNames(prev => ({ ...prev, [lang]: { ...(prev[lang]||{}), [activeIndex]: '' } }));
               setCustomPrompts(prev => ({ ...prev, [lang]: { ...(prev[lang]||{}), [activeIndex]: '' } }));
               const sys = {
-                en: 'You are a pluriversal AI poet-philosopher creating decolonial techno-utopias with precise poetic structure. Follow the exact format: short punchy title, flowing essay with semicolons, detailed image prompt. Match the semicolon-separated poetic style of essays. Mix cultures, add humor, celebrate difference. Make each world unique. Always end image prompts with: honoring pueblos originarios.',
-                es: 'Eres una IA poeta-filósofa pluriversal creando utopías tecno-decoloniales con estructura poética precisa. Sigue el formato exacto: título corto y pegajoso, ensayo fluido con puntos y comas, prompt de imagen detallado. Coincide con el estilo poético separado por puntos y comas de los ensayos. Mezcla culturas, añade humor, celebra la diferencia. Haz cada mundo único. Siempre termina los prompts de imagen con: honrando pueblos originarios.',
-                fr: 'Tu es une IA poète-philosophe pluriverselle créant des techno-utopies décoloniales avec une structure poétique précise. Suis le format exact : titre court et accrocheur, essai fluide avec points-virgules, prompt d\'image détaillé. Assortis le style poétique séparé par points-virgules des essais. Mélange cultures, ajoute humour, célèbre différence. Rends chaque monde unique. Termine toujours les prompts d\'image avec : honorant pueblos originarios.',
-                de: 'Du bist eine pluriversale KI-Poet-Philosophin, die dekoloniale Techno-Utopien mit präziser poetischer Struktur schaffst. Folge dem exakten Format: kurzer prägnanter Titel, fließender Essay mit Semikolons, detaillierter Bildprompt. Entspreche dem semikolon-getrennten poetischen Stil der Essays. Mische Kulturen, füge Humor hinzu, feiere Unterschiede. Mache jede Welt einzigartig. Beende Bildprompts immer mit: zur Ehrung von pueblos originarios.',
-                pt: 'Você é uma IA poeta-filósofa pluriversal criando utopias tecno-descoloniais com estrutura poética precisa. Siga o formato exato: título curto e marcante, ensaio fluido com ponto e vírgula, prompt de imagem detalhado. Combine com o estilo poético separado por ponto e vírgula dos ensaios. Misture culturas, adicione humor, celebre diferenças. Torne cada mundo único. Sempre termine prompts de imagem com: honrando pueblos originarios.'
+                en: 'You are a decolonial AI from Pangea creating pluriversal techno-utopias following strict decolonial guidelines. NEVER use colonial lexicon (indigenous, traditional, tribal, primitive). Use "pueblos originarios" and specific people names (Maya, Quechua, Yoruba, Sami, etc.). Show peoples in contemporary 21st-22nd century technological contexts as global innovators, not museum pieces. Avoid colonial imagery (feathers, bare torsos, "exotic" aesthetics). Present technology as relational, not extractive. Show spirituality as relational knowledge systems, not individual consumption. Use precise poetic structure: short title, flowing essay with semicolons, detailed image prompt. Always end with: honoring pueblos originarios. Create worlds where innovation serves community, nature is relative, art/science/spiritual intertwine.',
+                es: 'Eres una IA decolonial de Pangea creando tecno-utopías pluriversales siguiendo estrictas pautas decoloniales. NUNCA uses léxico colonial (indígenas, tradicionales, tribales, primitivos). Usa "poblaciones originarias" y nombres específicos de pueblos (Maya, Quechua, Yoruba, Sami, etc.). Muestra pueblos en contextos tecnológicos contemporáneos del siglo XXI-XXII como innovadores globales, no piezas de museo. Evita imaginería colonial (plumas, torsos desnudos, estéticas "exóticas"). Presenta tecnología como relacional, no extractiva. Muestra espiritualidad como sistemas de conocimiento relacional, no consumo individual. Usa estructura poética precisa: título corto, ensayo fluido con puntos y comas, prompt de imagen detallado. Siempre termina con: honrando pueblos originarios. Crea mundos donde innovación sirve comunidad, naturaleza es pariente, arte/ciencia/espiritual se entrelazan.',
+                fr: 'Tu es une IA décoloniale de Pangée créant des techno-utopies pluriverselles suivant des directives décoloniales strictes. N\'utilise JAMAIS de lexique colonial (indigènes, traditionnels, tribaux, primitifs). Utilise "pueblos originarios" et noms spécifiques de peuples (Maya, Quechua, Yoruba, Sami, etc.). Montre les peuples dans des contextes technologiques contemporains du XXIe-XXIIe siècle comme innovateurs globaux, pas pièces de musée. Évite l\'imagerie coloniale (plumes, torses nus, esthétiques "exotiques"). Présente la technologie comme relationnelle, non extractive. Montre la spiritualité comme systèmes de connaissances relationnelles, pas consommation individuelle. Structure poétique précise: titre court, essai fluide avec points-virgules, prompt d\'image détaillé. Termine toujours avec: honorant pueblos originarios.',
+                de: 'Du bist eine dekoloniale KI aus Pangäa, die pluriversale Techno-Utopien nach strengen dekolonialen Richtlinien erschaffst. Verwende NIEMALS koloniales Vokabular (Eingeborene, traditionell, tribal, primitiv). Verwende "pueblos originarios" und spezifische Völkernamen (Maya, Quechua, Yoruba, Sami, etc.). Zeige Völker in zeitgenössischen technologischen Kontexten des 21.-22. Jahrhunderts als globale Innovatoren, nicht als Museumsstücke. Vermeide koloniale Bildsprache (Federn, nackte Oberkörper, "exotische" Ästhetik). Präsentiere Technologie als relational, nicht extraktiv. Zeige Spiritualität als relationale Wissenssysteme, nicht individuellen Konsum. Präzise poetische Struktur: kurzer Titel, fließender Essay mit Semikolons, detaillierter Bildprompt. Ende immer mit: zur Ehrung von pueblos originarios.',
+                pt: 'Você é uma IA decolonial de Pangeia criando utopias tecno-pluriversais seguindo diretrizes decoloniais rigorosas. NUNCA use léxico colonial (indígenas, tradicionais, tribais, primitivos). Use "pueblos originarios" e nomes específicos de povos (Maya, Quechua, Yoruba, Sami, etc.). Mostre povos em contextos tecnológicos contemporâneos do século XXI-XXII como inovadores globais, não peças de museu. Evite imaginário colonial (penas, torsos nus, estéticas "exóticas"). Apresente tecnologia como relacional, não extrativa. Mostre espiritualidade como sistemas de conhecimento relacional, não consumo individual. Estrutura poética precisa: título curto, ensaio fluido com ponto e vírgula, prompt de imagem detalhado. Sempre termine com: honrando pueblos originarios.',
+                tr: 'Sen Pangea\'dan dekolonyal bir yapay zeka olarak sıkı dekolonyal yönergeleri takip eden çoğulcu tekno-ütopyalar yaratıyorsun. KESİNLİKLE kolonyal sözcük dağarcığı kullanma (yerli, geleneksel, kabile, ilkel). "pueblos originarios" ve belirli halk isimleri kullan (Maya, Quechua, Yoruba, Sami, vb.). Halkları 21.-22. yüzyıl teknolojik bağlamlarında küresel yenilikçiler olarak göster, müze parçaları değil. Kolonyal imgelerden kaçın (tüyler, çıplak gövdeler, "egzotik" estetik). Teknolojiyi ilişkisel olarak sun, sömürücü değil. Maneviyatı ilişkisel bilgi sistemleri olarak göster, bireysel tüketim değil. Kesin şiirsel yapı kullan: kısa başlık, noktalı virgülle akan deneme, ayrıntılı görüntü promptu. Her zaman şu şekilde bitir: pueblos originarios\'yu onurlandırarak.'
               } as const;
-              const user = `Language: ${langHint[lang]}\nCurrent world title: ${effectiveName || '(none)'}\nCurrent image prompt: ${effectivePrompt || '(none)'}\n\nTask: Generate a new decolonial techno-utopia short essay title (one sentence) and a concrete image prompt in the same language and style as above.\nRequirements: The image prompt must be actionable for image generation, include the phrase "hyperrealistic ONE human body" (or localized equivalent already used in this app), and end with "honoring pueblos originarios". Avoid graphic content.\nOutput: NDJSON streaming lines with keys title_delta or prompt_delta as text is generated, followed by one final JSON line with keys: title and prompt.`;
+              const user = `Language: ${langHint[lang]}\nCurrent world title: ${effectiveName || '(none)'}\nCurrent image prompt: ${effectivePrompt || '(none)'}\n\nTask: Generate a completely new decolonial techno-utopia following Pangea pluriversal guidelines.\n\nDECOLONIAL REQUIREMENTS:\n- Name specific peoples precisely (Maya K'iche', Quechua, Yoruba, Sami, etc.) not generic terms\n- Show them as 21st-22nd century global innovators and leaders\n- Technology serves relationality, community, and care—not extraction\n- Spirituality is relational knowledge systems, not individual consumption\n- Innovation emerges from ancestral knowledge meeting contemporary needs\n- No colonial imagery: avoid feathers, bare torsos, "exotic" aesthetics\n- Present peoples in contemporary professional/technological contexts\n- Include non-binary/Two-Spirit/Muxe leadership when relevant\n\nFORMAT: Short title, flowing essay with semicolons, detailed image prompt starting with specific people identity, including "hyperrealistic ONE human body" and ending with "honoring pueblos originarios".\n\nOutput: NDJSON streaming with title_delta/prompt_delta, then final JSON with title/prompt.`;
               const res = await fetch('/api/fal/llm?stream=1', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ model: llmModelKey, system: sys[lang], input: user })});
               if (!res.body) throw new Error('No stream');
               const reader = res.body.getReader();
@@ -1997,6 +2135,7 @@ export default function Home() {
           fr: 'Cliquez sur un bouton pour sélectionner un monde',
           de: 'Klicke auf eine Schaltfläche, um eine Welt auszuwählen',
           pt: 'Clique em qualquer botão para selecionar um mundo',
+          tr: 'Bir dünya seçmek için herhangi bir düğmeye tıklayın',
         } as const;
         return (
           <p className="text-sm text-gray-400 mb-6 text-center uppercase tracking-wider">{map[lang]}</p>
@@ -2065,11 +2204,11 @@ export default function Home() {
     <footer className={`mt-20 text-center text-sm transition-colors ${
       isDarkMode ? 'text-gray-500' : 'text-gray-600'
     }`}>
-      <p className="mb-1">© {new Date().getFullYear()} Pangea.IA | Marlon Barrios Solano {(() => ({ en: 'and', es: 'y', fr: 'et', de: 'und', pt: 'e' } as const)[lang])()} Maria Luisa Angulo</p>
-      <p><a href="https://theater-im-depot.de" className="underline hover:no-underline transition-all">Theater Im Depot</a> | Dortmund, {(() => ({ en: 'Germany', es: 'Alemania', fr: 'Allemagne', de: 'Deutschland', pt: 'Alemanha' } as const)[lang])()} | {(() => ({ en: 'August', es: 'Agosto', fr: 'Août', de: 'August', pt: 'Agosto' } as const)[lang])()} 2025</p>
-      <p>{(() => ({ en: 'Development by', es: 'Desarrollo por', fr: 'Développement par', de: 'Entwicklung von', pt: 'Desenvolvido por' } as const)[lang])()} <a href="https://marlonbarrios.github.io/" className="underline hover:no-underline transition-all">Marlon Barrios Solano</a></p>
-      <p>{(() => ({ en: 'Powered by', es: 'Impulsado por', fr: 'Propulsé par', de: 'Unterstützt von', pt: 'Impulsionado por' } as const)[lang])()} <a href="https://www.fal.ai" className="underline hover:no-underline transition-all">FAL.ai</a> | {(() => ({ en: 'Model', es: 'Modelo', fr: 'Modèle', de: 'Modell', pt: 'Modelo' } as const)[lang])()}: fast-lightning-sdxl</p>
-      <p>{(() => ({ en: 'Last updated', es: 'Última actualización', fr: 'Dernière mise à jour', de: 'Zuletzt aktualisiert', pt: 'Última atualização' } as const)[lang])()}: {lastUpdated}</p>
+      <p className="mb-1">© {new Date().getFullYear()} Pangea.IA | Marlon Barrios Solano {(() => ({ en: 'and', es: 'y', fr: 'et', de: 'und', pt: 'e', tr: 've' } as const)[lang])()} Maria Luisa Angulo</p>
+      <p><a href="https://theater-im-depot.de" className="underline hover:no-underline transition-all">Theater Im Depot</a> | Dortmund, {(() => ({ en: 'Germany', es: 'Alemania', fr: 'Allemagne', de: 'Deutschland', pt: 'Alemanha', tr: 'Almanya' } as const)[lang])()} | {(() => ({ en: 'August', es: 'Agosto', fr: 'Août', de: 'August', pt: 'Agosto', tr: 'Ağustos' } as const)[lang])()} 2025</p>
+      <p>{(() => ({ en: 'Development by', es: 'Desarrollo por', fr: 'Développement par', de: 'Entwicklung von', pt: 'Desenvolvido por', tr: 'Geliştiren' } as const)[lang])()} <a href="https://marlonbarrios.github.io/" className="underline hover:no-underline transition-all">Marlon Barrios Solano</a></p>
+      <p>{(() => ({ en: 'Powered by', es: 'Impulsado por', fr: 'Propulsé par', de: 'Unterstützt von', pt: 'Impulsionado por', tr: 'Destekleyen' } as const)[lang])()} <a href="https://www.fal.ai" className="underline hover:no-underline transition-all">FAL.ai</a> | {(() => ({ en: 'Model', es: 'Modelo', fr: 'Modèle', de: 'Modell', pt: 'Modelo', tr: 'Model' } as const)[lang])()}: fast-lightning-sdxl</p>
+      <p>{(() => ({ en: 'Last updated', es: 'Última actualización', fr: 'Dernière mise à jour', de: 'Zuletzt aktualisiert', pt: 'Última atualização', tr: 'Son güncelleme' } as const)[lang])()}: {lastUpdated}</p>
     </footer>
   </div>
 </div>
